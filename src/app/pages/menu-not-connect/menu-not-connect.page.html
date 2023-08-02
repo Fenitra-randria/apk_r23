@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="prev()" name="chevron-back-outline"></ion-icon>
+            </ion-grid>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="center-titre">
+            <ion-icon src="../../assets/icon/home/voiture.svg"></ion-icon>
+            <ion-text>
+                Une équipe à votre écoute à tout moment.<br> Notre équipe est présente 24h/24 et 7j/7 par téléphone.
+            </ion-text>
+            <div class="login-register">
+                <ion-button (click)="verLogin()" class="login">
+                    SE CONNECTER
+                </ion-button>
+                <ion-button (click)="verRegister()" color="secondary" class="register">
+                    S'INSCRIRE
+                </ion-button>
+            </div>
+        </ion-grid>
+    </ion-grid>
+</ion-content>

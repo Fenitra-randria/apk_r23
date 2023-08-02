@@ -1,0 +1,180 @@
+ion-text.text-right.mb-15.font10.d-block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    height: fit-content;
+}
+
+.add-img {
+    margin-top: -55px;
+}
+
+.flex-direction1 .add-img {
+    margin-top: 5px;
+}
+
+.flex-direction1 {
+    text-align: center;
+}
+
+.menu-profile {
+    width: 100%;
+    flex-wrap: wrap;
+    ion-icon {
+        margin-right: 6px;
+    }
+}
+
+ion-icon.menus-troispoi {
+    font-size: 25px !important;
+}
+
+.absolute-menu {
+    position: absolute;
+    right: 8px;
+    font-size: 18px;
+}
+
+.font12 {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.item-menu {
+    width: calc(50% - 3px);
+    .header-slote {
+        display: flex;
+        height: 38px;
+        padding: 0 10px;
+        background-color: #ff3354;
+        font-size: 10px !important;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        ion-icon {
+            font-size: 16px;
+        }
+    }
+    ion-item {
+        --min-height: 10px;
+        --padding-start: 0;
+        ion-radio {
+            margin: 0;
+            background-color: #fff;
+            position: absolute;
+            right: 0;
+            --color: #fff!important;
+            width: 15px;
+            height: 15PX;
+            border-radius: 50%;
+            --color-checked: #ff3354;
+        }
+    }
+}
+
+.absolute-img-user {
+    position: absolute;
+    right: 35px;
+    z-index: 2;
+}
+
+.w25 {
+    min-width: 105px;
+    max-width: 105px;
+}
+
+.ml-2.max-100 {
+    max-width: calc(100% - 80px);
+}
+
+ion-button.register-voiture {
+    width: calc(100% - 125px);
+    margin-left: auto;
+    height: 38px;
+    --box-shadow: none!important;
+}
+
+ion-select.customize {
+    min-width: calc(100% - 125px);
+}
+
+.list-lige .item-lig .flex-boutton-bottom {
+    bottom: 8px;
+}
+
+ion-item.no-pad {
+    --inner-padding-start: 0!important;
+    --inner-padding-end: 0!important;
+    --padding-start: 0!important;
+}
+
+.activeMenu::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    bottom: -1px;
+    background-color: #c3d830;
+    left: 40px;
+    width: 50px;
+}
+
+.menu-profile.d-flex {
+    align-items: flex-start!important;
+}
+
+ion-label.d-flex {
+    display: flex!important;
+}
+
+.details-place.d-flex {
+    margin: 10px 0;
+    .color {
+        width: 26px;
+        height: 23px;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        font-size: 11px;
+    }
+    .color-place-libre,
+    .color-chaffeur {
+        background-color: #fff;
+    }
+    .color-chaffeur {
+        color: #898989;
+    }
+    .color-place-libre {
+        color: #FF3354;
+    }
+    .color-reserver {
+        background-color: #707070;
+        color: #fff;
+    }
+    .color-vos-place {
+        background-color: #C3D830;
+        color: #fff;
+    }
+    .color-encours-reservation {
+        background-color: #FF3354;
+        color: #fff;
+    }
+    .w-50.item-flex {
+        ion-col {
+            display: flex;
+            justify-content: center;
+            .color {
+                margin: 0!important;
+            }
+        }
+        ion-item {
+            --padding-start: 0;
+            --min-height: 30px;
+        }
+    }
+}

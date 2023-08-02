@@ -1,0 +1,88 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Bienvenu sur notre plateforme R23"></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container">
+        <ion-row class="p-2">
+            <ion-col class="padcol1" size="12">
+                <div (click)="verPage(typeUser==='if-cooperative'?'list-action-reservation':'accueil')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/default/home.svg"></ion-icon>
+                    Réservations
+                </div>
+            </ion-col>
+            <ion-col class="padcol1" size="12">
+                <div (click)="verPage('list-action-profile')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/default/compte.svg"></ion-icon>
+                    Mon compte
+                </div>
+            </ion-col>
+            <ion-col class="padcol1" size="12">
+                <div (click)="verPage('list-discussion')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/default/chat.svg"></ion-icon>
+                    Messages
+                </div>
+            </ion-col>
+            <ion-col *ngIf="typeUser==='if-cooperative'||typeUser==='if-proprietaire-vehicule'" class="padcol1" size="12">
+                <div (click)="verPage(typeUser==='if-cooperative'?'menu-gestion-vehicule':'gestion-vehicule-personnelle')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/default/event.svg"></ion-icon>
+                    Gestion de véhicules
+                </div>
+            </ion-col>
+            <ion-col class="padcol1" size="12">
+                <div (click)="verPage('envoye-colis')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/default/colis.svg"></ion-icon>
+                    Envoi de colis
+                </div>
+            </ion-col>
+            <ion-col *ngIf="typeUser==='if-cooperative'||typeUser==='if-proprietaire-vehicule'" class="padcol1" size="12">
+                <div (click)="verPage('revenu')" class="item-menu-show">
+                    <ion-icon class="mr-2" name="star"></ion-icon>
+                    Details de revenu
+                </div>
+            </ion-col>
+            <ion-col *ngIf="typeUser==='if-proprietaire-vehicule'||typeUser==='if-chauffeur'" class="padcol1" size="12">
+                <div (click)="verPage('tours-voiture')" class="item-menu-show">
+                    <ion-icon class="mr-2" name="car"></ion-icon>
+                    Tours des voitures
+                </div>
+            </ion-col>
+            <ion-col class="padcol1" size="12">
+                <div (click)="verPage('notification')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/default/notification.svg"></ion-icon>
+                    Notification
+                </div>
+            </ion-col>
+            <ion-col *ngIf="typeUser==='if-proprietaire-vehicule'" class="padcol1" size="12">
+                <div (click)="verPage('list-chauffeur-proprietaire-vehicule')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/default/user.svg"></ion-icon>
+                    Liste des chauffeurs
+                </div>
+            </ion-col>
+            <ion-col class="padcol1" size="12">
+                <div (click)="verPage('invite-amis')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/default/groups.svg"></ion-icon>
+                    Inviter un(e) ami(e)
+                </div>
+            </ion-col>
+            <ion-col class="padcol1" size="12">
+                <div (click)="verPage('parametre')" class="item-menu-show">
+                    <ion-icon class="mr-2" name="settings-sharp"></ion-icon>
+                    Parametres
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

@@ -1,0 +1,177 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Envoyer un colis"></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container">
+        <ion-row class="login-register">
+            <ion-col size="12" class="form-input py-0 m-0">
+                <ion-label class="font11">Qu'est-ce que vous envoyez ? </ion-label>
+                <ion-input type="text"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="form-input py-0 m-0">
+                <ion-label class="font11">Envoyer depuis</ion-label>
+                <ion-select interface="popover" class="d-flex customize">
+                    <ion-select-option value="Antananarivo">Antananarivo</ion-select-option>
+                    <ion-select-option value="Tamatave">Tamatave</ion-select-option>
+                    <ion-select-option value="Fianarantsoa">Fianarantsoa</ion-select-option>
+                </ion-select>
+            </ion-col>
+            <ion-col size="6" class="form-input py-0 m-0">
+                <ion-label class="font11">à</ion-label>
+                <ion-select interface="popover" class="d-flex customize">
+                    <ion-select-option value="Antananarivo">Antananarivo</ion-select-option>
+                    <ion-select-option value="Tamatave">Tamatave</ion-select-option>
+                    <ion-select-option value="Fianarantsoa">Fianarantsoa</ion-select-option>
+                </ion-select>
+            </ion-col>
+            <ion-col size="6" class="form-input py-0 m-0">
+                <ion-label class="font11">Poids</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="form-input py-0 m-0">
+                <ion-label class="font11">Hauteur</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="form-input py-0 m-0">
+                <ion-label class="font11">Longueur (cm)</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="form-input py-0 m-0">
+                <ion-label class="font11">Largeur (cm)</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="form-input py-0 m-0">
+                <ion-label class="font11">Envoyer le</ion-label>
+                <ion-input id="open-modal-date-envoye" type="number"></ion-input>
+                <ion-modal #modal trigger="open-modal-date-envoye" [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75,1]">
+                    <ng-template>
+                        <ion-content>
+                            <div class="p-6">
+                                <ion-calendar (change)="dismissMenu()" [(ngModel)]="date_fin" [type]="type" [format]="'YYYY-MM-DD'">
+                                </ion-calendar>
+                            </div>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
+            </ion-col>
+            <ion-col size="6" class="form-input py-0 m-0">
+                <ion-label class="font11">Prix estimée</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-col>
+            <hr class="w-100">
+            <div style="margin-top: 3px;" class="form-input d-flex w-100">
+                <div class="w-100">
+                    <ion-label class="font11 mb-2 d-block">Photo du colis</ion-label>
+                    <div class="d-flex w-100">
+                        <div class="ajout-pdp">
+                            <div [ngClass]="Recto ? 'avec-border' : ''" class="add-img">
+                                <img *ngIf="Recto" [src]="Recto" alt="">
+                                <input accept="image/*" (change)="onSelectFilePubRecto($event)" type="file" id="Recto" class="upload-img">
+                            </div>
+                        </div>
+                        <div class="ajout-pdp">
+                            <div [ngClass]="Verso ? 'avec-border' : ''" class="add-img">
+                                <img *ngIf="Verso" [src]="Verso" alt="">
+                                <input accept="image/*" (change)="onSelectFilePubVerso($event)" type="file" id="Verso" class="upload-img">
+                            </div>
+                        </div>
+                        <div class="ajout-pdp">
+                            <div [ngClass]="Recto ? 'avec-border' : ''" class="add-img">
+                                <img *ngIf="Recto" [src]="Recto" alt="">
+                                <input accept="image/*" (change)="onSelectFilePubRecto($event)" type="file" id="Recto" class="upload-img">
+                            </div>
+                        </div>
+                        <div class="ajout-pdp">
+                            <div [ngClass]="Verso ? 'avec-border' : ''" class="add-img">
+                                <img *ngIf="Verso" [src]="Verso" alt="">
+                                <input accept="image/*" (change)="onSelectFilePubVerso($event)" type="file" id="Verso" class="upload-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="w-100">
+            <div style="margin-top: 3px;" class="form-input d-flex w-100">
+                <div class="w-100">
+                    <ion-label class="font11 mb-2 d-block">Assigner par le réservation disponible</ion-label>
+                    <ion-grid class="details-ling list-lige">
+                        <!-- <div class="d-flex minh-80 font12 text-center text-white w-100 justify-center">
+                            Aucun départ disponible.
+                            <br> Choisissez une voiture disponible
+                        </div> -->
+                        <div class="itm">
+                            <div class="item-lig">
+                                <div class="dedails-zotra">
+                                    <ion-list>
+                                        <ion-list-header>
+                                            <ion-label class="limite1lign">Hyundai D4D - <span>Premuim</span></ion-label>
+                                        </ion-list-header>
+                                        <ion-item lines="none">
+                                            <ion-label><span class="bold">Départ :</span> Antananarivo</ion-label>
+                                        </ion-item>
+                                        <ion-item lines="none">
+                                            <ion-label><span class="bold">Arrivée :</span> Diego Suarez</ion-label>
+                                        </ion-item>
+                                        <ion-item lines="none">
+                                            <ion-label><span class="bold">Date du :</span> 12/08/22</ion-label>
+                                        </ion-item>
+                                        <ion-item lines="none">
+                                            <ion-label><span class="bold">Prix :</span> <span class="color-secondary">Ar 40 000</span> pour <span class="color-secondary">2</span> pers</ion-label>
+                                        </ion-item>
+                                    </ion-list>
+                                    <div class="flex-boutton-bottom">
+                                        <div (click)="verPage('infocooperative')" style="display: flex;" class="position-relative">
+                                            <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" class="user-profile">
+                                            <div class="actif"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="position-relative">
+                                    <ion-img class="img-voiture" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-pour-tous-450x338.jpg"></ion-img>
+                                    <div class="flex-boutton-top">
+                                        <div (click)="verPage('chaffeur')" style="display: flex;" class="position-relative">
+                                            <img src="https://cdn.dahaboo.com/upload/i/2021-11/chauffeur-de-luxe-144594.jpg" alt="" class="user-profile">
+                                            <div class="actif"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex my-1">
+                                <ion-item lines="none" class="no-pad minh-0 my-1">
+                                    <ion-checkbox class="pointer-none" class="m-0" slot="start"></ion-checkbox>
+                                    <ion-label class="m-0 pl-1 font11">Envoyer par 8849TBK</ion-label>
+                                </ion-item>
+                                <div class="form-input m-0 d-flex justify-start">
+                                    <ion-label class="font11 mr-2">Votre place :</ion-label>
+                                    <div class="details-place d-flex m-0">
+                                        <div class="color color-vos-place pa-1 m-0">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="w-100">
+                        </div>
+                    </ion-grid>
+                </div>
+            </div>
+            <ion-button color="secondary" class="register mb80">
+                ENVOYER MON COLIS
+            </ion-button>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>
+<app-footer-menu (statusDismis)="statusDismis()" pageActive="cooperative" [MenuShowBottom]="MenuShowBottom"></app-footer-menu>

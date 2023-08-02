@@ -1,0 +1,87 @@
+.chargement ion-icon {
+    font-size: 90px;
+    margin-bottom: 40px;
+}
+
+.lottie {
+    height: 100vh;
+}
+
+.chargement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo-bottom {
+    position: absolute;
+    bottom: 40px;
+}
+
+$loader--width: 90px;
+$loader-dot--size: 5px;
+.logo-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loader {
+    height: $loader-dot--size;
+    width: $loader--width;
+    position: absolute;
+    top: 25px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    &--dot {
+        animation: loader 3s ease-in-out infinite;
+        height: $loader-dot--size;
+        width: $loader-dot--size;
+        border-radius: 100%;
+        background-color: #032153;
+        position: absolute;
+        &:first-child {
+            background-color: #ff3354;
+            animation-delay: 0.5s;
+        }
+        &:nth-child(2) {
+            background-color: #ff3354;
+            animation-delay: 0.4s;
+        }
+        &:nth-child(3) {
+            background-color: #ff3354;
+            animation-delay: 0.3s;
+        }
+        &:nth-child(4) {
+            background-color: #ff3354;
+            animation-delay: 0.2s;
+        }
+        &:nth-child(5) {
+            background-color: #ff3354;
+            animation-delay: 0.1s;
+        }
+        &:nth-child(6) {
+            background-color: #ff3354;
+            animation-delay: 0s;
+        }
+    }
+}
+
+@keyframes loader {
+    15% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX( $loader--width - $loader-dot--size);
+    }
+    65% {
+        transform: translateX( $loader--width - $loader-dot--size);
+    }
+    95% {
+        transform: translateX(0);
+    }
+}

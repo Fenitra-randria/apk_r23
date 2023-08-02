@@ -1,0 +1,7 @@
+{
+  "name": "R23",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

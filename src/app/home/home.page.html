@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+    <ion-grid class="container">
+        <ion-slides [options]="slideOptions" (ionSlideWillChange)="doCheck()" #slideHome>
+            <ion-slide>
+                <ion-grid class="center-titre">
+                    <ion-icon src="../../assets/icon/home/voiture.svg"></ion-icon>
+                    <ion-text>
+                        Une équipe à votre écoute à tout moment.<br> Notre équipe est présente 24h/24 et 7j/7 par téléphone en cas d’urgence sur votre voyage.
+                    </ion-text>
+                </ion-grid>
+            </ion-slide>
+            <ion-slide>
+                <ion-grid class="etap2 p-0">
+                    <ion-grid class="header2 d-flex p-0">
+                        <ion-icon (click)="prev()" name="chevron-back-outline"></ion-icon>
+                        <ion-icon src="../../assets/icon/home/voiture.svg"></ion-icon>
+                    </ion-grid>
+                    <ion-grid class="content2">
+                        <div class="titre-section">
+                            Gagner du temps pour votre résérvation sécurisé.
+                        </div>
+                        <div class="lign-separ"></div>
+                        <ion-text>
+                            Votre réservation en ligne être majorées des bonus suivant votre résérvation proposés régulièrement.
+                        </ion-text>
+                        <div class="w-100 height100Screen d-flex align-center justify-center">
+                            <ion-icon src="../../assets/icon/home/energie.svg"></ion-icon>
+                        </div>
+                    </ion-grid>
+                </ion-grid>
+            </ion-slide>
+            <ion-slide>
+                <ion-grid class="etap2 p-0">
+                    <ion-grid class="header2 d-flex p-0">
+                        <ion-icon (click)="prev()" name="chevron-back-outline"></ion-icon>
+                        <ion-icon src="../../assets/icon/home/voiture.svg"></ion-icon>
+                    </ion-grid>
+                    <ion-grid class="content2 dansetap3">
+                        <div class="w-100 height100Screen d-flex align-center justify-center">
+                            <ion-icon src="../../assets/icon/home/energie.svg"></ion-icon>
+                        </div>
+                        <div>
+                            <div class="lign-separ"></div>
+                            <ion-text>
+                                Un service de qualité est souvent récompensé et fidélise les clients. Ayez une conduite souple pour la sécurisation, un véhicule propre et souriez, ça compte beaucoup !
+                            </ion-text>
+                        </div>
+                    </ion-grid>
+                </ion-grid>
+            </ion-slide>
+        </ion-slides>
+        <ion-grid class="bottom-slide">
+            <div class="ols">
+                <span [ngClass]="btn_index === 0 ? 'active' : ''"></span>
+                <span [ngClass]="btn_index === 1 ? 'active' : ''"></span>
+                <span [ngClass]="btn_index === 2 ? 'active' : ''"></span>
+            </div>
+            <ion-button *ngIf="btn_index === 0 || btn_index === 1" (click)="next()" color="secondary">
+                Suivante
+            </ion-button>
+            <ion-button *ngIf="btn_index === 2" (click)="basicLoader()" color="secondary">
+                C'est parti !
+            </ion-button>
+        </ion-grid>
+    </ion-grid>
+</ion-content>

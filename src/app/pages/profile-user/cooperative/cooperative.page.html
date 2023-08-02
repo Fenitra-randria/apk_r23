@@ -1,0 +1,123 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Faites votre réservation en ligne"></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="blog-filtre">
+            <div id="open-modalcooperative"></div>
+            <ion-grid class="menu-profile d-flex">
+                <div (click)="showMenuFooter('depart')" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Ville de départ</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+                <div (click)="showMenuFooter('arrive')" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Ville d'arrivée</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+                <div (click)="showMenuFooter('date')" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Date de départ</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+                <div (click)="showMenuFooter('Horaires')" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Horaires</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+                <div (click)="showMenuFooter('categorie')" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Catégories</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+                <div (click)="showMenuFooter('cooperative')" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Choix coopérative</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+            </ion-grid>
+        </ion-grid>
+        <ion-grid class="result-filtre">
+            <ion-text class="font12">
+                Voiture disponible
+            </ion-text>
+            <ion-grid class="list-lige">
+                <div *ngFor="let itemPub of [1,2,3,4,5,6];let i =index;" class="item-lig">
+                    <ion-img class="img-voiture" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-pour-tous-450x338.jpg"></ion-img>
+                    <div class="dedails-zotra">
+                        <ion-list>
+                            <ion-list-header>
+                                <ion-label class="limite1lign">Hyundai D4D - <span>Premuim</span></ion-label>
+                                <ion-icon [id]="'open-menuPub-inProfile-'+i" name="ellipsis-vertical"></ion-icon>
+
+                                <ion-modal class="fixedheightMenu" #modal [trigger]="'open-menuPub-inProfile-'+i" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                                    <ng-template>
+                                        <ion-content scroll-y="false">
+                                            <ion-list>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="open-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Modifier le parcours</ion-label>
+                                                </ion-item>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Supprimer le parcours</ion-label>
+                                                </ion-item>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="help-circle-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Signaler le parcours</ion-label>
+                                                </ion-item>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="albums-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Enregistrer le parcours</ion-label>
+                                                </ion-item>
+                                            </ion-list>
+                                        </ion-content>
+                                    </ng-template>
+                                </ion-modal>
+                            </ion-list-header>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Départ :</span> Antananarivo</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Arrivée :</span> Diego Suarez</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Date du :</span> 12/08/22</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Prix :</span> <span class="color-secondary">Ar 40 000</span></ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                    <div class="flex-boutton-bottom">
+                        <ion-button class="outline-vert text-primary bg-vert">
+                            2 places disponibles
+                        </ion-button>
+                        <ion-button class="outline-secondary" (click)="reservation()" color="secondary">
+                            Choisir
+                        </ion-button>
+                        <div (click)="verPage('infocooperative')" style="display: flex;" class="position-relative">
+                            <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" class="user-profile">
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                </div>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>
+<app-footer-menu (statusDismis)="statusDismis()" pageActive="cooperative" [MenuShowBottom]="MenuShowBottom"></app-footer-menu>

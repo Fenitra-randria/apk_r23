@@ -1,0 +1,237 @@
+ion-grid.center-titre {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    ion-icon {
+        font-size: 150px;
+    }
+    ion-text {
+        font-family: 'gilroy-light';
+        text-align: center;
+    }
+}
+
+.login-register {
+    height: fit-content;
+}
+
+ion-text.text-right.mb-15.font10.d-block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+ion-grid.boutton-footer-slde {
+    padding: 15px 0!important;
+}
+
+ion-text.dernier-inscri {
+    margin: 15px 0;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+ion-slides.slide-etaps,
+ion-slide.slide-etaps-item {
+    width: 100%!important;
+}
+
+ion-slides.slide-new-inscri {
+    width: 100%;
+    ion-slide {
+        width: 20%!important;
+        .add-img {
+            width: 50px;
+            height: 50px;
+        }
+        .ajout-pdp {
+            width: 100%;
+            padding: 0 10px;
+            ion-label {
+                max-width: 100%;
+                font-size: 12px!important;
+            }
+        }
+    }
+}
+
+.container {
+    height: fit-content;
+}
+
+.add-img {
+    margin-top: -55px;
+}
+
+.flex-direction1 .add-img {
+    margin-top: 5px;
+}
+
+.flex-direction1 {
+    text-align: center;
+}
+
+.genre ion-label {
+    margin-top: 10px!important;
+    display: block;
+}
+
+ion-radio {
+    background-color: #fff;
+    border-radius: 50%;
+    --color: #fff;
+    --color-checked: var(--ion-color-secondary);
+}
+
+.validation-bloc {
+    margin-top: 10px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    ion-text {
+        font-size: 10px;
+    }
+    .input-validation {
+        display: flex;
+        width: 130px;
+        margin: auto;
+        ion-input {
+            width: calc(25% - 3px);
+            background-color: #fff;
+            color: #000;
+            font-size: 10px !important;
+            height: 22px;
+            border-radius: 9px;
+            --padding-start: 0;
+            --padding-top: 0;
+            --padding-bottom: 0;
+            text-align: center;
+            margin: 0 2px;
+        }
+    }
+    ion-button.transparent {
+        box-shadow: none!important;
+        border: 1px #ffffff38 solid;
+        font-size: 12px!important;
+        height: 28px;
+    }
+}
+
+.dedails-zotra {
+    background-color: #fff;
+    margin-right: 5px;
+    border-radius: 5px;
+    position: relative;
+    .flex-boutton-bottom {
+        bottom: 8px;
+        right: 8px;
+    }
+}
+
+ion-slide {
+    display: block!important;
+}
+
+.list-lige .item-lig .dedails-zotra ion-list ion-list-header ion-label {
+    text-align: left;
+}
+
+.list-lige .item-lig ion-img.img-voiture {
+    height: 110px!important;
+}
+
+.list-lige .item-lig {
+    background-color: transparent!important;
+}
+
+ion-text {
+    text-align: left;
+    display: block;
+}
+
+ion-badge.actif-icon.badge-mode-paiement {
+    right: 25px;
+    top: -10px;
+    border: 2px #ff3354 solid;
+    padding: 0;
+}
+
+ion-grid.boutton-footer-slde.p-0 {
+    padding: 0!important;
+}
+
+.details-place.d-flex {
+    margin: 10px 0;
+    .color {
+        width: 26px;
+        height: 23px;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        font-size: 11px;
+    }
+    .color-place-libre,
+    .color-chaffeur {
+        background-color: #fff;
+    }
+    .color-chaffeur {
+        color: #898989;
+    }
+    .color-place-libre {
+        color: #FF3354;
+    }
+    .color-reserver {
+        background-color: #707070;
+        color: #fff;
+    }
+    .color-vos-place {
+        background-color: #C3D830;
+        color: #fff;
+    }
+    .color-encours-reservation {
+        background-color: #FF3354;
+        color: #fff;
+    }
+    .w-50.item-flex {
+        ion-col {
+            display: flex;
+            justify-content: center;
+            .color {
+                margin: 0!important;
+            }
+        }
+        ion-item {
+            --padding-start: 0;
+            --min-height: 30px;
+        }
+    }
+}
+
+.text-primary {
+    --color: #032153!important;
+    color: #032153!important;
+}
+
+ion-grid.boutton-footer-slde {
+    display: flex;
+    justify-content: space-between;
+    ion-button {
+        width: calc(50% - 10px);
+        height: 27px;
+        font-size: 10px;
+        text-transform: none;
+        box-shadow: none;
+        --border-radius: 5px!important;
+        border-radius: 5px !important;
+        margin: 0;
+        border: none;
+        --box-shadow: none!important;
+    }
+}

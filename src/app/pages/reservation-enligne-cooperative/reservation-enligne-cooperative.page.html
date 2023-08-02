@@ -1,0 +1,145 @@
+<app-header></app-header>
+<ion-header>
+    <ion-grid class="bg-secondary header-cooperative h-105">
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="back()" name="chevron-back"></ion-icon>
+                <div class="d-flex">
+                    <ion-icon (click)="verPage('list-discussion')" name="chatbox-ellipses-outline"></ion-icon>
+                    <ion-icon (click)="verPage('notification')" class="menus-troispoi mx-1 notif-icon" src="../../../../assets/icon/accueil/notification.svg"></ion-icon>
+                    <div (click)="verCooperative()" style="display: flex;" class="position-relative inHeader">
+                        <div class="d-flex">
+                            <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" (click)="verProfile()" class="user-profile">
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                </div>
+            </ion-grid>
+            <ion-grid class="name-cooperative search-block px-0 d-flex justify-start">
+                <ion-input color="light" class="bg-light round17 pl-2" placeholder="Recherche..."></ion-input>
+                <ion-icon class="position-absolute-search" src="../../../../assets/icon/message/search.svg"></ion-icon>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+    <div class="mt-1 container py-0">
+        <hr class="w-100">
+        <ion-grid class="button-action-cooperative minh30 d-flex">
+            <ion-text class="font12 m-0">
+                Réservations
+            </ion-text>
+
+        </ion-grid>
+        <hr class="w-100">
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container">
+        <div class="details-conversation">
+            <div *ngFor="let message of contentMessage;let i =index;" [class]="{'right':message.typeUser === 'me','left':message.typeUser === 'you','flex-wrap':message.reservationId !=undefined}" class="item-chat d-flex align-start my-2">
+                <div *ngIf="message.typeUser === 'me'" class="info-user">
+                    <div class="image-user-globale position-relative no-border">
+                        <ion-img src="https://asialyst.com/fr/wp-content/uploads/2021/02/jack-ma-alibaba-chine.jpeg"></ion-img>
+                        <div class="actif"></div>
+                    </div>
+                </div>
+                <div *ngIf="message.detailsMessage != null && message.reservationId === undefined" class="details-message font12 w-100" [class]="message.typeUser === 'me' ? 'ml-2 text-dark' : 'mr-2'">
+                    {{ message.detailsMessage }}
+                    <p class="m-0 time-nouveau text-center font11">
+                        12:40
+                    </p>
+                </div>
+                <div *ngIf="message.reservationId != undefined" class="details-status-reservation d-flex font12 w-100">
+                    <p *ngIf="message.typeUser === 'you'" class="m-0 text-center font11 mt-2">
+                        12:40
+                    </p>
+                    <div class="avec-border-bott">
+                        {{ message.detailsMessage }}
+                    </div>
+                    <p *ngIf="message.typeUser === 'me'" class="m-0 text-center font11 mt-2">
+                        12:40
+                    </p>
+                </div>
+                <div *ngIf="message.photos" class="list-gallery w-100 d-flex flex-wrap m-n1" [class]="message.typeUser === 'me' ? 'ml-2 justify-start' : 'mr-2 text-dark justify-end'">
+                    <div *ngFor="let photo of message.photos;let j =index;" class="image-user-globale position-relative no-border m-1">
+                        <ion-img [src]="photo"></ion-img>
+                    </div>
+                </div>
+                <div *ngIf="message.typeUser === 'you'" class="info-user">
+                    <div class="image-user-globale position-relative no-border">
+                        <ion-img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <div class="actif"></div>
+                    </div>
+                </div>
+                <ion-grid *ngIf="message.reservationId != undefined" class="list-lige w-100">
+                    <div class="item-lig">
+                        <ion-img class="img-voiture" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-pour-tous-450x338.jpg"></ion-img>
+                        <div class="dedails-zotra">
+                            <ion-list>
+                                <ion-list-header>
+                                    <ion-label class="limite1lign">Hyundai D4D - <span>1358TAB</span></ion-label>
+                                    <!-- <ion-icon [id]="'open-menuPub-'+i" name="ellipsis-vertical"></ion-icon>
+
+                                    <ion-modal class="fixedheightMenu2" #modal [trigger]="'open-menuPub-'+i" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                                        <ng-template>
+                                            <ion-content scroll-y="false">
+                                                <ion-list>
+                                                    <ion-item class="bord-bot">
+                                                        <ion-icon name="open-outline" class="mr-2"></ion-icon>
+                                                        <ion-label class="font11">Modifier</ion-label>
+                                                    </ion-item>
+                                                    <ion-item class="bord-bot">
+                                                        <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                                        <ion-label class="font11">Supprimer</ion-label>
+                                                    </ion-item>
+                                                </ion-list>
+                                            </ion-content>
+                                        </ng-template>
+                                    </ion-modal> -->
+                                </ion-list-header>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Départ :</span> Antananarivo</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Arrivée :</span> Diego Suarez</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Date du :</span> 12/08/22</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Prix :</span> <span class="color-secondary">Ar 40 000 -</span> pour <span class="color-secondary">2</span> pers</ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </div>
+                        <div class="flex-boutton-bottom">
+                            <ion-button class="outline-vert text-primary bg-vert">
+                                Réfuser
+                            </ion-button>
+                            <ion-button class="outline-secondary" (click)="reservation()" color="secondary">
+                                Accepter
+                            </ion-button>
+                            <div style="display: flex;" class="position-relative">
+                                <ion-img class="avec-bagage" src="../../../../assets/icon/home/colis.png"></ion-img>
+                                <img (click)="verPage('chaffeur')" src="https://www.samsic-emploi.fr/sites/samsic-emploi/files/styles/image_contenu/public/paragraph/image/2019-09/image-m%C3%A9tier-chauffeur-spl.jpg?itok=tWWMHWd1" alt="" (click)="verProfile()" class="user-profile">
+                                <div class="actif"></div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-grid>
+            </div>
+        </div>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

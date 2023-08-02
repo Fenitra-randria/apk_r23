@@ -1,0 +1,12 @@
+<div class="zoom-box">
+    <div class="close-dom">
+        <ion-icon name="close" slot="end" (click)="dismiss()" style="font-size: 30px; color: #032153"></ion-icon>
+    </div>
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let image of images">
+            <div class="swiper-zoom-container">
+                <img class="card-img" src="{{image}}" />
+            </div>
+        </ion-slide>
+    </ion-slides>
+</div>

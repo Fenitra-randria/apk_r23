@@ -1,0 +1,239 @@
+ion-text.text-right.mb-15.font10.d-block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    height: fit-content;
+}
+
+.add-img {
+    margin-top: -55px;
+}
+
+.flex-direction1 .add-img {
+    margin-top: 5px;
+}
+
+.flex-direction1 {
+    text-align: center;
+}
+
+.menu-profile {
+    width: 100%;
+    flex-wrap: wrap;
+    ion-icon {
+        margin-right: 6px;
+    }
+}
+
+.item-lig .name-cooperative .image-user-cooperative {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    min-width: 50px;
+    ion-img {
+        border-radius: 15px !important;
+    }
+}
+
+.mr-2 {
+    margin-right: 10px;
+}
+
+.list-lige .item-lig .dedails-zotra {
+    width: calc(100% - 50px);
+}
+
+ion-icon.menus-troispoi {
+    font-size: 25px !important;
+}
+
+.no-border {
+    border: none!important;
+}
+
+.details-message {
+    min-height: 50px;
+    margin-bottom: 0!important;
+    display: flex!important;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    position: relative;
+}
+
+.info-user .image-user-globale ion-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 33% !important;
+    overflow: hidden;
+    border: 2px #fff solid;
+}
+
+ion-content {
+    --padding-bottom: 0!important;
+}
+
+.send-message ion-icon {
+    font-size: 25px;
+    color: #3D3D3D;
+    margin: 5px;
+}
+
+.details-message::before {
+    content: "◄";
+    position: absolute;
+    left: -9px;
+    color: #fff;
+    top: 20px;
+}
+
+.left .details-message {
+    background-color: #002D5E;
+}
+
+.left .details-message::before {
+    content: '►';
+    position: absolute;
+    right: -9px;
+    left: auto;
+    color: #002D5E;
+    top: 20px;
+}
+
+.absolute-menu {
+    position: absolute;
+    right: 8px;
+    font-size: 18px;
+}
+
+.menu-action-item {
+    --min-height: 0;
+    border-bottom: 2px #ff3354 solid;
+    --border-color: transparent!important;
+    min-width: 85px;
+    margin: 0 8px!important;
+    text-align: center;
+}
+
+.search-block {
+    width: 70%;
+}
+
+.p-0 {
+    padding: 0 !important;
+    --padding-end: 0!important;
+    --padding-start: 0!important;
+    --inner-padding-end: 0!important;
+}
+
+.header-cooperative {
+    min-height: 77px;
+}
+
+.font12 {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.details-mes {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.menu-action-item.active {
+    border-color: #fff;
+}
+
+.item-conversation {
+    padding: 7px 0;
+    border: 1px #7070702b solid;
+    border-left: 0;
+    border-right: 0;
+    margin-top: -1px;
+}
+
+.time-nouveau {
+    position: absolute;
+    bottom: -17px;
+}
+
+.details-message {
+    margin-bottom: 15px!important;
+}
+
+.left .time-nouveau {
+    left: 0;
+}
+
+.right .time-nouveau {
+    right: 0;
+}
+
+.avec-border-bott {
+    padding: 4px 0px;
+    border-bottom: 2px #ff3354 solid;
+    min-width: 85px;
+    text-align: center;
+}
+
+.item-chat:first-child {
+    margin-top: 0;
+}
+
+.item-menu {
+    width: calc(50% - 3px);
+    .header-slote {
+        display: flex;
+        height: 38px;
+        padding: 0 10px;
+        background-color: #ff3354;
+        font-size: 10px !important;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        ion-icon {
+            font-size: 16px;
+        }
+    }
+    ion-item {
+        --min-height: 10px;
+        --padding-start: 0;
+        ion-radio {
+            margin: 0;
+            background-color: #fff;
+            position: absolute;
+            right: 0;
+            --color: #fff!important;
+            width: 15px;
+            height: 15PX;
+            border-radius: 50%;
+            --color-checked: #ff3354;
+        }
+    }
+}
+
+.details-status-reservation {
+    max-width: calc(100% - 60px);
+    margin: 0!important;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+ion-grid.list-lige.w-100 {
+    min-width: 100%;
+}
+
+.menu-profile.d-flex {
+    align-items: flex-start!important;
+}
+
+ion-label.d-flex {
+    display: flex!important;
+}

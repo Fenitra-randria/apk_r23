@@ -1,0 +1,228 @@
+<app-header></app-header>
+<ion-header>
+    <ion-grid class="bg-secondary header-cooperative  h-105">
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="back()" name="chevron-back"></ion-icon>
+                <div class="d-flex">
+                    <ion-icon (click)="verPage('list-discussion')" name="chatbox-ellipses-outline"></ion-icon>
+                    <ion-icon (click)="verPage('notification')" class="menus-troispoi mx-1 notif-icon" src="../../../../assets/icon/accueil/notification.svg"></ion-icon>
+                    <div (click)="verCooperative()" style="display: flex;" class="position-relative inHeader">
+                        <div class="d-flex">
+                            <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" (click)="verProfile()" class="user-profile">
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                </div>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+    <div class="mt-10 container py-0">
+        <ion-grid class="name-cooperative-voyageur px-0 d-flex direction-column justify-center">
+            <div (click)="verPage('list-action-profile')" class="image-user-cooperative position-relative">
+                <ion-img src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                <div class="actif"></div>
+            </div>
+            <div (click)="verPage('list-action-profile')" class="ml-2 text-center max-100">
+                <p class="m-0 mt-1 font12 limite1lign">
+                    Toavina RAFIDISON
+                </p>
+                <p class="m-0 d-flex justify-start font10 mt-1 line-height-15">
+                    <ion-icon size="10" class="mx-1 d-block" color="success" name="person"></ion-icon>
+                    30 contacts
+                    <ion-icon size="10" class="mx-1 ml-3 d-block" color="success" name="heart"></ion-icon>
+                    105
+                    <ion-icon class="mx-1 ml-3 d-block" size="10" color="success" name="location"></ion-icon>
+                    <span class="limite1lign">
+                        IVM 12 TER AT Ambodivona, Antananarivo 101
+                    </span>
+                </p>
+            </div>
+        </ion-grid>
+        <ion-grid class="name-cooperative search-block px-0 d-flex justify-start">
+            <ion-input color="light" class="bg-light round17" placeholder="Recherche..."></ion-input>
+            <ion-icon class="position-absolute-search" src="../../../../assets/icon/message/search.svg"></ion-icon>
+        </ion-grid>
+        <hr class="w-100">
+        <ion-grid class="button-action-cooperative d-flex">
+            <div class="d-flex w-100 justify-arround">
+                <ion-button (click)="showMenuActive('Demande reçu')" [class]="menuActive==='Demande reçu'?'activeMenu':''" class="bg-transparent format-petite font10 no-shadow">
+                    <span class="limite1lign">
+                        Reçu
+                    </span>
+                </ion-button>
+                <ion-button (click)="showMenuActive('Demande envoyé')" [class]="menuActive==='Demande envoyé'?'activeMenu':''" class="bg-transparent format-petite font10 no-shadow">
+                    <span class="limite1lign">
+                        Envoyé
+                    </span>
+                </ion-button>
+                <ion-button (click)="showMenuActive('Faire une invitation')" [class]="menuActive==='Faire une invitation'?'activeMenu':''" class="bg-transparent format-petite font10 no-shadow">
+                    <span class="limite1lign">
+                        Invitation
+                    </span>
+                </ion-button>
+            </div>
+        </ion-grid>
+        <hr class="w-100">
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid *ngIf="menuActive==='Demande reçu'" class="result-filtre">
+            <ion-grid class="list-lige">
+                <div *ngFor="let itemPub of [1,2,3,4,5,6];let i =index;" class="item-lig">
+                    <div class="name-cooperative m-0 pa-1 pr-0">
+                        <div (click)="verPage('infocooperative')" class="image-user-cooperative position-relative">
+                            <ion-img src="https://www.mbvans.com/content/dam/mb-vans/us/myco/Sprinter/all-vehicles/S_MB_Sprinter_Passenger.jpg"></ion-img>
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                    <div class="dedails-zotra">
+                        <ion-list>
+                            <ion-list-header>
+                                <ion-label class="limite1lign">Hyundai D4D - <span>Classe</span></ion-label>
+                                <ion-icon [id]="'open-menuVoiture-'+i" name="ellipsis-vertical"></ion-icon>
+
+                                <ion-modal class="fixedheightMenu1" #modal [trigger]="'open-menuVoiture-'+i" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                                    <ng-template>
+                                        <ion-content scroll-y="false">
+                                            <ion-list>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Supprimer</ion-label>
+                                                </ion-item>
+                                            </ion-list>
+                                        </ion-content>
+                                    </ng-template>
+                                </ion-modal>
+                            </ion-list-header>
+                            <div class="d-flex direction-column align-start h-100">
+                                <ion-item class="max-100 d-flex w-100" lines="none">
+                                    <p class="max-100 font11 m-0 text-primary">
+                                        <span class="bold text-primary">
+                                            8849 TBK
+                                        </span> à une demande d'ajout dans votre coopérative.
+                                    </p>
+                                </ion-item>
+                                <ion-item class="d-flex w-100 justify-between" lines="none">
+                                    <ion-label>Il y a 5 jours</ion-label>
+                                    <ion-button color="secondary">
+                                        Accepter
+                                    </ion-button>
+                                </ion-item>
+                            </div>
+                        </ion-list>
+                    </div>
+                </div>
+            </ion-grid>
+        </ion-grid>
+        <ion-grid *ngIf="menuActive==='Demande envoyé'" class="result-filtre">
+            <ion-grid class="list-lige">
+                <div *ngFor="let itemPub of [1,2,3,4,5,6];let i =index;" class="item-lig">
+                    <div class="name-cooperative m-0 pa-1 pr-0">
+                        <div (click)="verPage('infocooperative')" class="image-user-cooperative position-relative">
+                            <ion-img src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                    <div class="dedails-zotra">
+                        <ion-list>
+                            <ion-list-header>
+                                <ion-label class="limite1lign">Rakotondrazaka <span>Lazatiana</span></ion-label>
+                                <ion-icon [id]="'open-menuVoiture-'+i" name="ellipsis-vertical"></ion-icon>
+
+                                <ion-modal class="fixedheightMenu1" #modal [trigger]="'open-menuVoiture-'+i" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                                    <ng-template>
+                                        <ion-content scroll-y="false">
+                                            <ion-list>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Supprimer</ion-label>
+                                                </ion-item>
+                                            </ion-list>
+                                        </ion-content>
+                                    </ng-template>
+                                </ion-modal>
+                            </ion-list-header>
+                            <div class="d-flex direction-column align-start h-100">
+                                <ion-item class="max-100" lines="none">
+                                    <p class="max-100 font11 m-0 text-primary">
+                                        à une demande d'ajout.
+                                    </p>
+                                </ion-item>
+                                <ion-item class="d-flex w-100 justify-between" lines="none">
+                                    <ion-label>Il y a 5 jours</ion-label>
+                                    <ion-button color="secondary">
+                                        Annuler
+                                    </ion-button>
+                                </ion-item>
+                            </div>
+                        </ion-list>
+                    </div>
+                </div>
+            </ion-grid>
+        </ion-grid>
+        <ion-grid *ngIf="menuActive==='Faire une invitation'" class="result-filtre">
+            <ion-grid class="list-lige">
+                <div *ngFor="let itemPub of [1,2,3,4,5,6];let i =index;" class="item-lig">
+                    <div class="name-cooperative m-0 pa-1 pr-0">
+                        <div (click)="verPage('chaffeur')" class="image-user-cooperative position-relative">
+                            <ion-img src="https://pbs.twimg.com/profile_images/963882712317747202/CEYy5EJQ_400x400.jpg"></ion-img>
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                    <div class="dedails-zotra">
+                        <ion-list>
+                            <ion-list-header>
+                                <ion-label class="limite1lign">Hyundai D4D - <span>Classe</span></ion-label>
+                                <ion-icon [id]="'open-menuVoiture-'+i" name="ellipsis-vertical"></ion-icon>
+
+                                <ion-modal class="fixedheightMenu1" #modal [trigger]="'open-menuVoiture-'+i" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                                    <ng-template>
+                                        <ion-content scroll-y="false">
+                                            <ion-list>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Supprimer</ion-label>
+                                                </ion-item>
+                                            </ion-list>
+                                        </ion-content>
+                                    </ng-template>
+                                </ion-modal>
+                            </ion-list-header>
+                            <div class="d-flex direction-column align-start h-100">
+                                <ion-item class="max-100" lines="none">
+                                    <p class="max-100 font11  m-0 text-primary">
+                                        <span class="bold text-primary">
+                                            8849 TBK
+                                        </span> à une demande d'ajout dans votre coopérative.
+                                    </p>
+                                </ion-item>
+                                <ion-item class="d-flex w-100 justify-between" lines="none">
+                                    <ion-label>Il y a 5 jours</ion-label>
+                                    <ion-button color="secondary">
+                                        Ajouter
+                                    </ion-button>
+                                </ion-item>
+                            </div>
+                        </ion-list>
+                    </div>
+                </div>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

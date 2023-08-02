@@ -1,0 +1,301 @@
+<app-header></app-header>
+<ion-header>
+    <ion-grid class="bg-secondary header-cooperative h-105">
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="pageActive==='bienvenue'?dismissModal():back()" name="chevron-back"></ion-icon>
+                <div class="d-flex">
+                    <ion-icon (click)="verPage('list-discussion')" name="chatbox-ellipses-outline"></ion-icon>
+                    <ion-icon (click)="verPage('notification')" class="menus-troispoi mx-1 notif-icon" src="../../../../assets/icon/accueil/notification.svg"></ion-icon>
+                    <div (click)="verPage('infocooperative')" style="display: flex;" class="position-relative inHeader">
+                        <div class="d-flex">
+                            <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" class="user-profile">
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <ion-img class="photo-couv" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img> -->
+            </ion-grid>
+            <!-- <ion-grid *ngIf="typeUser === 'if-cooperative'" class="name-cooperative px-0 d-flex justify-start">
+                <div (click)="verPage('infocooperative')" class="image-user-cooperative position-relative">
+                    <ion-img *ngIf="typeUser === 'if-cooperative'" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                    <ion-img *ngIf="typeUser != 'if-cooperative'" src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                    <div class="actif"></div>
+                </div>
+                <div (click)="verPage('infocooperative')" class="ml-2 max-100">
+                    <p class="m-0 mt-1 font12 limite1lign">
+                        {{ typeUser === 'if-voyageur' ? 'Toavina RAFIDISON' : 'Cotiss Madagascar' }}
+                    </p>
+                    <p class="m-0 mt-4 font10 line-height-15">
+                        <ion-icon size="10" color="success" name="person"></ion-icon>
+                        30 contacts
+                        <ion-icon size="10" color="success" name="heart"></ion-icon>
+                        105
+                        <br>
+                        <span class="limite1lign">
+                            <ion-icon size="10" color="success" name="location"></ion-icon>
+                            IVM 12 TER AT Ambodivona, Antananarivo 101
+                        </span>
+                    </p>
+                </div>
+            </ion-grid> -->
+        </ion-grid>
+    </ion-grid>
+    <div class="mt-10 container py-0">
+        <ion-grid class="name-cooperative-voyageur px-0 d-flex direction-column justify-center">
+            <div (click)="verPage('list-action-profile')" class="image-user-cooperative position-relative">
+                <ion-img *ngIf="typeUser === 'if-cooperative'" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                <ion-img *ngIf="typeUser != 'if-cooperative'" src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                <div class="actif"></div>
+            </div>
+            <div (click)="verPage('list-action-profile')" class="ml-2 text-center max-100">
+                <p class="m-0 mt-1 font12 limite1lign">
+                    {{ typeUser === 'if-voyageur' ? 'Toavina RAFIDISON' : 'Cotiss Madagascar' }}
+                </p>
+                <p class="m-0 d-flex justify-start font10 mt-1 line-height-15">
+                    <ion-icon size="10" class="mx-1 d-block" color="success" name="person"></ion-icon>
+                    30 contacts
+                    <ion-icon size="10" class="mx-1 ml-3 d-block" color="success" name="heart"></ion-icon>
+                    105
+                    <ion-icon class="mx-1 ml-3 d-block" size="10" color="success" name="location"></ion-icon>
+                    <span class="limite1lign">
+                        IVM 12 TER AT Ambodivona, Antananarivo 101
+                    </span>
+                </p>
+            </div>
+        </ion-grid>
+        <hr class="w-100">
+        <ion-grid class="button-action-cooperative minh30 d-flex">
+            <ion-text class="font12 m-0">
+                Revenu
+            </ion-text>
+        </ion-grid>
+        <hr class="w-100">
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="blog-filtre">
+            <div id="open-modalaccueil"></div>
+            <ion-grid class="menu-profile d-flex">
+                <div id="open-modal-date-debut" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Date de début</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+                <ion-content class="ion-padding">
+                    <ion-modal #modal trigger="open-modal-date-debut" [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75,1]">
+                        <ng-template>
+                            <ion-content>
+                                <div class="p-6">
+                                    <ion-calendar (change)="dismissMenu()" [(ngModel)]="date_debut" [type]="type" [format]="'YYYY-MM-DD'">
+                                    </ion-calendar>
+                                </div>
+                            </ion-content>
+                        </ng-template>
+                    </ion-modal>
+                </ion-content>
+                <div id="open-modal-date-fin" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Date de fin</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+                <ion-content class="ion-padding">
+                    <ion-modal #modal trigger="open-modal-date-fin" [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75,1]">
+                        <ng-template>
+                            <ion-content>
+                                <div class="p-6">
+                                    <ion-calendar (change)="dismissMenu()" [(ngModel)]="date_fin" [type]="type" [format]="'YYYY-MM-DD'">
+                                    </ion-calendar>
+                                </div>
+                            </ion-content>
+                        </ng-template>
+                    </ion-modal>
+                </ion-content>
+                <div id="open-modal-proprietaire-vehicule" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Propriétaire de véhicule</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+                <ion-content class="ion-padding">
+                    <ion-modal #modal trigger="open-modal-proprietaire-vehicule" [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75,1]">
+                        <ng-template>
+                            <ion-content>
+                                <ion-searchbar class="search text-dark" placeholder="Recherche..." (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+                                <ion-list>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://i.ytimg.com/vi/cZiZAqsOrJE/maxresdefault.jpg"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">Toavina RAFIDISON</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxoMgcnq6p_aRSGGGz1Bs9gDfZqsls4MKIg&usqp=CAU"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">Toavina RAFIDISON</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdLwdifmoATv2YsZOAX7Rm5RaK0hno4FJ6DmN2F1HMFNQorxAlPanKIrTsG49lkg-X2c&usqp=CAU"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">Toavina RAFIDISON</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://youimg1.tripcdn.com/target/100711000000rijpoD13E_C_640_320_R5_Q70.jpg_.webp?proc=source%2Ftrip"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">Toavina RAFIDISON</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://i.ytimg.com/vi/cZiZAqsOrJE/maxresdefault.jpg"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">Toavina RAFIDISON</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxoMgcnq6p_aRSGGGz1Bs9gDfZqsls4MKIg&usqp=CAU"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">Toavina RAFIDISON</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdLwdifmoATv2YsZOAX7Rm5RaK0hno4FJ6DmN2F1HMFNQorxAlPanKIrTsG49lkg-X2c&usqp=CAU"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">Toavina RAFIDISON</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://youimg1.tripcdn.com/target/100711000000rijpoD13E_C_640_320_R5_Q70.jpg_.webp?proc=source%2Ftrip"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">Toavina RAFIDISON</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-list>
+                            </ion-content>
+                        </ng-template>
+                    </ion-modal>
+                </ion-content>
+                <div id="open-modal-voiture" class="item-menu">
+                    <ion-label class="header-slote" slot="header"><span>Voiture</span>
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </ion-label>
+                </div>
+                <ion-content class="ion-padding">
+                    <ion-modal #modal trigger="open-modal-voiture" [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75,1]">
+                        <ng-template>
+                            <ion-content>
+                                <ion-searchbar class="search text-dark" placeholder="Recherche..." (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+                                <ion-list>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://i.ytimg.com/vi/cZiZAqsOrJE/maxresdefault.jpg"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">1039TG</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxoMgcnq6p_aRSGGGz1Bs9gDfZqsls4MKIg&usqp=CAU"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">1039TG</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdLwdifmoATv2YsZOAX7Rm5RaK0hno4FJ6DmN2F1HMFNQorxAlPanKIrTsG49lkg-X2c&usqp=CAU"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">1039TG</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://youimg1.tripcdn.com/target/100711000000rijpoD13E_C_640_320_R5_Q70.jpg_.webp?proc=source%2Ftrip"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">1039TG</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://i.ytimg.com/vi/cZiZAqsOrJE/maxresdefault.jpg"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">1039TG</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxoMgcnq6p_aRSGGGz1Bs9gDfZqsls4MKIg&usqp=CAU"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">1039TG</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdLwdifmoATv2YsZOAX7Rm5RaK0hno4FJ6DmN2F1HMFNQorxAlPanKIrTsG49lkg-X2c&usqp=CAU"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">1039TG</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                    <ion-item (click)="dismissMenu()">
+                                        <ion-img class="img-carre" src="https://youimg1.tripcdn.com/target/100711000000rijpoD13E_C_640_320_R5_Q70.jpg_.webp?proc=source%2Ftrip"></ion-img>
+                                        <ion-label>
+                                            <h5 class="font11">1039TG</h5>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-list>
+                            </ion-content>
+                        </ng-template>
+                    </ion-modal>
+                </ion-content>
+            </ion-grid>
+        </ion-grid>
+        <ion-grid class="result-filtre">
+            <ion-text class="font12">
+                Semaine de <span class="color-secondary">19 septembre 2021</span> au <span class="color-secondary">25 septembre 2021</span>
+            </ion-text>
+            <ion-grid class="list-lige">
+                <div *ngFor="let itemPub of [1,2,3,4,5];let i =index;" class="item-lig">
+                    <ion-img class="img-voiture" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-pour-tous-450x338.jpg"></ion-img>
+                    <div class="dedails-zotra">
+                        <ion-list>
+                            <ion-list-header>
+                                <ion-label class="limite1lign"> Sprinter Phase 3 - <span>8849 TAB</span></ion-label>
+                            </ion-list-header>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Nom :</span> RAKOTONDRANAIVO</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Prénom :</span> Raymond Justin</ion-label>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Tél :</span> 034 04 920 00 - 033 29 199 74</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                    <div class="flex-boutton-bottom">
+                        <ion-button class="outline-secondary" color="secondary">
+                            {{ i+1+'000.000 Ar' }}
+                        </ion-button>
+                        <div (click)="verCooperative()" style="display: flex;" class="position-relative">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9voS0J3876PJ8H-N04CgCAMA9i2tR20vRpA&usqp=CAU" alt="" (click)="verPage('chaffeur')" class="user-profile">
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                </div>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="container py-0">
+        <ion-grid>
+            <ion-text class="font12 m-0 mt-1">
+                <span class="color-secondary">Total de revenu du :</span>
+            </ion-text>
+        </ion-grid>
+        <hr class="w-100 my-1">
+        <ion-grid class="d-flex">
+            <ion-text class="font12">
+                <span class="color-secondary">19 septembre 2021</span> au <span class="color-secondary"></span>25 septembre 2021
+            </ion-text>
+            <ion-text class="font12">
+                <span class="color-secondary">20.000.000Ar</span>
+            </ion-text>
+        </ion-grid>
+    </ion-grid>
+</ion-footer>

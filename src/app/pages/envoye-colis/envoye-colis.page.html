@@ -1,0 +1,37 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Envoi du colis"></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container">
+        <ion-row class="p-2">
+            <ion-col class="padcol1" size="12">
+                <div (click)="verPage('form-envoye-colis')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/profile/reservation.svg"></ion-icon>
+                    Envoyer un colis
+                </div>
+            </ion-col>
+            <ion-col class="padcol1" size="12">
+                <div (click)="verPage('tous-colis')" class="item-menu-show">
+                    <ion-icon class="mr-2" src="../../../assets/icon/profile/reservation.svg"></ion-icon>
+                    Etat du colis
+                    <div class="count1">
+                        10
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

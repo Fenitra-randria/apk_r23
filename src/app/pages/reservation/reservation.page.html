@@ -1,0 +1,257 @@
+<app-header></app-header>
+<app-header-info-user [pageActive]="'Réservé maintenant'"></app-header-info-user>
+
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-grid class="container absolute-header">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="prev()" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-icon class="menus-troispoi" src="../../../../assets/icon/accueil/notification.svg"></ion-icon>
+            </ion-grid>
+        </ion-grid>
+        <ion-img class="bg-header" src="../../../../assets/icon/register/bh-header.svg"></ion-img>
+        <div class="ajout-pdp">
+            <div class="add-img avec-border">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqI40ihWvD1ZknCZXJihfwYr9ETZL8pRjR9w&usqp=CAU" alt="">
+            </div>
+            <ion-label>Valisoa Hedis</ion-label>
+            <ion-icon class="absolute-menu" name="ellipsis-vertical"></ion-icon>
+        </div>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-slides class="slide-etaps" [options]="slideOptions" (ionSlideWillChange)="doCheck()" #slideregister>
+            <ion-slide class="slide-etaps-item">
+                <ion-grid *ngIf="btn_index === 0" class="details-ling list-lige">
+                    <!-- <ion-text class="font12 item-lig">
+                        Résumer de votre choix :
+                    </ion-text> -->
+                    <div class="item-lig">
+                        <div class="dedails-zotra">
+                            <ion-list>
+                                <ion-list-header>
+                                    <ion-label class="limite1lign">Hyundai D4D - <span>Premuim</span></ion-label>
+                                </ion-list-header>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Départ :</span> Antananarivo</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Arrivée :</span> Diego Suarez</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Date du :</span> 12/08/22</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Prix :</span> <span class="color-secondary">Ar 40 000</span> pour <span class="color-secondary">2</span> pers</ion-label>
+                                </ion-item>
+                            </ion-list>
+                            <div class="flex-boutton-bottom">
+                                <div (click)="verPage('infocooperative')" style="display: flex;" class="position-relative">
+                                    <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" class="user-profile">
+                                    <div class="actif"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <ion-img class="img-voiture" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-pour-tous-450x338.jpg"></ion-img>
+                            <div class="flex-boutton-top">
+                                <div (click)="verPage('chaffeur')" style="display: flex;" class="position-relative">
+                                    <img src="https://cdn.dahaboo.com/upload/i/2021-11/chauffeur-de-luxe-144594.jpg" alt="" class="user-profile">
+                                    <div class="actif"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-grid>
+                <ion-grid class="place-dispo">
+                    <ion-text class="font12">
+                        Choisissez votre place sur le numéro :
+                    </ion-text>
+                    <div class="details-place d-flex">
+                        <div class="w-50 item-flex">
+                            <ion-list>
+                                <ion-item lines="none">
+                                    <div class="color color-chaffeur">
+                                        <ion-icon dark name="person-outline"></ion-icon>
+                                    </div>
+                                    <ion-label class="font12">Chauffeur</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <div (click)="addPlace()" class="color color-place-libre"></div>
+                                    <ion-label class="font12">Place libres</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <div class="color color-reserver"></div>
+                                    <ion-label class="font12">Réservée</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <div (click)="addPlace('11')" class="color color-vos-place"></div>
+                                    <ion-label class="font12">Vos places</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <div class="color color-encours-reservation"></div>
+                                    <ion-label class="font12">Réservation en cours</ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </div>
+                        <div class="w-50 item-flex">
+                            <ion-row>
+                                <ion-col *ngFor="let itemPlace of MyPlace;let i =index;" size="3">
+                                    <div (click)="addPlace(itemPlace.numero,i)" [class]="{'color-reserver':itemPlace.statusPlace==='reserver','color-vos-place':itemPlace.statusPlace==='MyPlace','color-place-libre':itemPlace.statusPlace==='libre','color-encours-reservation':itemPlace.statusPlace==='EncoursReservation'}"
+                                        class="color" *ngIf="itemPlace.statusPlace != 'chauffeur' && itemPlace.statusPlace != 'vide'">
+                                        {{ itemPlace.numero }}
+                                    </div>
+                                    <div class="color color-chaffeur" *ngIf="itemPlace.statusPlace === 'chauffeur'">
+                                        <ion-icon *ngIf="itemPlace.statusPlace === 'chauffeur'" dark name="person-outline"></ion-icon>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </div>
+                    </div>
+                </ion-grid>
+                <ion-grid class="boutton-footer-slde justify-end p-0">
+                    <ion-button (click)="next()" color="secondary">
+                        Réservé maintenant
+                    </ion-button>
+                </ion-grid>
+            </ion-slide>
+            <ion-slide class="slide-etaps-item" style="width: calc(100vh - 245px);">
+                <ion-grid *ngIf="btn_index === 1" class="details-ling list-lige">
+                    <!-- <ion-text class="font12 item-lig">
+                        Résumer de votre choix :
+                    </ion-text> -->
+                    <div class="item-lig">
+                        <div class="dedails-zotra">
+                            <ion-list>
+                                <ion-list-header>
+                                    <ion-label class="limite1lign">Hyundai D4D - <span>Premuim</span></ion-label>
+                                </ion-list-header>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Départ :</span> Antananarivo</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Arrivée :</span> Diego Suarez</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Date du :</span> 12/08/22</ion-label>
+                                </ion-item>
+                                <ion-item lines="none">
+                                    <ion-label><span class="bold">Prix :</span> <span class="color-secondary">Ar 40 000</span> pour <span class="color-secondary">2</span> pers</ion-label>
+                                </ion-item>
+                            </ion-list>
+                            <div class="flex-boutton-bottom">
+                                <div (click)="verPage('infocooperative')" style="display: flex;" class="position-relative">
+                                    <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" class="user-profile">
+                                    <div class="actif"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <ion-img class="img-voiture" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-pour-tous-450x338.jpg"></ion-img>
+                            <div class="flex-boutton-top">
+                                <div (click)="verPage('chaffeur')" style="display: flex;" class="position-relative">
+                                    <img src="https://cdn.dahaboo.com/upload/i/2021-11/chauffeur-de-luxe-144594.jpg" alt="" class="user-profile">
+                                    <div class="actif"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-grid>
+                <ion-grid *ngIf="btn_index === 1" class="center-titre">
+                    <div class="login-register">
+                        <div class="form-input m-0 d-flex justify-start">
+                            <ion-label class="font11 mr-2">Votre place :</ion-label>
+                            <div class="details-place d-flex">
+                                <div class="color color-vos-place pa-1">
+                                    3
+                                </div>
+                                <div class="color color-vos-place pa-1">
+                                    2
+                                </div>
+                                <div class="color color-vos-place pa-1">
+                                    5
+                                </div>
+                                <div class="color color-vos-place pa-1">
+                                    8
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-input">
+                            <ion-label class="font11">Confirmer votre numéro de téléphone</ion-label>
+                            <ion-input type="number"></ion-input>
+                        </div> -->
+                    </div>
+                </ion-grid>
+                <ion-text *ngIf="btn_index===1 " class="dernier-inscri text-center font11 ">
+                    Choisissez votre methode de paiement
+                </ion-text>
+                <ion-radio-group [(ngModel)]="paiement " class="d-flex center-titre " *ngIf="btn_index===1 ">
+                    <div class="ajout-pdp ">
+                        <div class="name-cooperative m-0 pa-1 pr-0 ">
+                            <div class="image-user-cooperative position-relative ">
+                                <ion-img (click)="showPaiement( 'MVOLA') " src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png "></ion-img>
+                                <ion-badge class="actif-icon badge-mode-paiement" color="#fff ">
+                                    <ion-radio value="MVOLA " class="w-100 h-100 ">
+
+                                    </ion-radio>
+                                </ion-badge>
+                            </div>
+                        </div>
+                        <ion-label (click)="showPaiement( 'MVOLA') " class="limite1lign font11 ">MVOLA</ion-label>
+                    </div>
+                    <div class="ajout-pdp ">
+                        <div class="name-cooperative m-0 pa-1 pr-0 ">
+                            <div class="image-user-cooperative position-relative ">
+                                <ion-img (click)="showPaiement( 'AIRTEL') " src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png "></ion-img>
+                                <ion-badge class="actif-icon badge-mode-paiement" color="#fff ">
+                                    <ion-radio value="AIRTEL " class="w-100 h-100 ">
+
+                                    </ion-radio>
+                                </ion-badge>
+                            </div>
+                        </div>
+                        <ion-label (click)="showPaiement( 'AIRTEL') " class="limite1lign font11 ">AIRTEL MONEY</ion-label>
+                    </div>
+                    <div class="ajout-pdp ">
+                        <div class="name-cooperative m-0 pa-1 pr-0 ">
+                            <div class="image-user-cooperative position-relative ">
+                                <ion-img (click)="showPaiement( 'ORAGNE') " src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png "></ion-img>
+                                <ion-badge class="actif-icon badge-mode-paiement" color="#fff ">
+                                    <ion-radio value="ORAGNE " class="w-100 h-100 ">
+
+                                    </ion-radio>
+                                </ion-badge>
+                            </div>
+                        </div>
+                        <ion-label (click)="showPaiement( 'ORAGNE') " class="limite1lign font11 ">ORAGNE MONEY</ion-label>
+                    </div>
+                </ion-radio-group>
+                <ion-grid class="boutton-footer-slde ">
+                    <ion-button [disabled]="btn_index===0 " (click)="prev() " color="success ">
+                        <span class="text-primary ">
+                            Précédent
+                        </span>
+                    </ion-button>
+                    <ion-button (click)="ValiderReservation() " color="secondary ">
+                        Réservé maintenant
+                    </ion-button>
+                </ion-grid>
+            </ion-slide>
+        </ion-slides>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer ">
+        <div class="d-flex w-100 px-3 pt-3 ">
+            <div class="d-flex ">
+                <ion-icon (click)="showMenuClick() " size="54 " src="../../../../assets/icon/accueil/menu.svg "></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase ">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage( 'accueil') " class="logo-footer " size="54 " src="../../../../assets/icon/register/logo-blanc.svg "></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

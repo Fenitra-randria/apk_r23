@@ -1,0 +1,77 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Liste des chauffeurs"></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="result-filtre">
+            <ion-grid class="list-lige">
+                <div *ngFor="let itemPub of [1,2,3,4,5,6];let i =index;" class="item-lig">
+                    <ion-img class="img-voiture" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-pour-tous-450x338.jpg"></ion-img>
+                    <div class="dedails-zotra">
+                        <ion-list>
+                            <ion-list-header>
+                                <ion-label class="limite1lign">RABEMANANTSOA - <span>Laza Tiana</span></ion-label>
+                                <ion-icon [id]="'open-menuVoiture-'+i" name="ellipsis-vertical"></ion-icon>
+
+                                <ion-modal [class]="typeUser==='if-proprietaire-vehicule'? 'fixedheightMenu3':'fixedheightMenu1'" #modal [trigger]="'open-menuVoiture-'+i" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                                    <ng-template>
+                                        <ion-content scroll-y="false">
+                                            <ion-list>
+                                                <ion-item *ngIf="typeUser==='if-proprietaire-vehicule'" class="bord-bot">
+                                                    <ion-icon name="open-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Ajouter</ion-label>
+                                                </ion-item>
+                                                <ion-item *ngIf="typeUser==='if-proprietaire-vehicule'" class="bord-bot">
+                                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Supprimer</ion-label>
+                                                </ion-item>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="help-circle-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Signaler</ion-label>
+                                                </ion-item>
+                                            </ion-list>
+                                        </ion-content>
+                                    </ng-template>
+                                </ion-modal>
+                            </ion-list-header>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Date de naissance :</span> 12/08/1982</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Adresse :</span> II N 27 F Bis Analamahitsy Tanana</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">CIN :</span> 102 031 011 526</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Téléphone :</span> 034 04 920 00 - 033 29 199 74</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Inscrit le :</span> 10/12/22</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                    <div class="flex-boutton-bottom">
+                        <div (click)="verPage('chaffeur')" style="display: flex;" class="position-relative">
+                            <img src="https://pbs.twimg.com/profile_images/963882712317747202/CEYy5EJQ_400x400.jpg" alt="" class="user-profile">
+                            <div [class]="i===1||i===3?'non actif':'actif'"></div>
+                        </div>
+                    </div>
+                </div>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

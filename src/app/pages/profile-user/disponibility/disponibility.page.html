@@ -1,0 +1,188 @@
+<app-header></app-header>
+<ion-header>
+    <ion-grid class="bg-secondary header-cooperative h-105">
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="pageActive==='bienvenue'?dismissModal():back()" name="chevron-back"></ion-icon>
+                <div class="d-flex">
+                    <ion-icon (click)="verPage('list-discussion')" name="chatbox-ellipses-outline"></ion-icon>
+                    <ion-icon (click)="verPage('notification')" class="menus-troispoi mx-1 notif-icon" src="../../../../assets/icon/accueil/notification.svg"></ion-icon>
+                    <div (click)="verPage('infocooperative')" style="display: flex;" class="position-relative inHeader">
+                        <div class="d-flex">
+                            <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" class="user-profile">
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <ion-img class="photo-couv" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img> -->
+            </ion-grid>
+            <!-- <ion-grid *ngIf="typeUser === 'if-cooperative'" class="name-cooperative px-0 d-flex justify-start">
+                <div (click)="verPage('infocooperative')" class="image-user-cooperative position-relative">
+                    <ion-img *ngIf="typeUser === 'if-cooperative'" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                    <ion-img *ngIf="typeUser != 'if-cooperative'" src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                    <div class="actif"></div>
+                </div>
+                <div (click)="verPage('infocooperative')" class="ml-2 max-100">
+                    <p class="m-0 mt-1 font12 limite1lign">
+                        {{ typeUser === 'if-voyageur' ? 'Toavina RAFIDISON' : 'Cotiss Madagascar' }}
+                    </p>
+                    <p class="m-0 mt-4 font10 line-height-15">
+                        <ion-icon size="10" color="success" name="person"></ion-icon>
+                        30 contacts
+                        <ion-icon size="10" color="success" name="heart"></ion-icon>
+                        105
+                        <br>
+                        <span class="limite1lign">
+                            <ion-icon size="10" color="success" name="location"></ion-icon>
+                            IVM 12 TER AT Ambodivona, Antananarivo 101
+                        </span>
+                    </p>
+                </div>
+            </ion-grid> -->
+        </ion-grid>
+    </ion-grid>
+    <div class="mt-10 container py-0">
+        <ion-grid class="name-cooperative-voyageur px-0 d-flex direction-column justify-center">
+            <div (click)="verPage('list-action-profile')" class="image-user-cooperative position-relative">
+                <ion-img *ngIf="typeUser === 'if-cooperative'" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                <ion-img *ngIf="typeUser != 'if-cooperative'" src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                <div class="actif"></div>
+            </div>
+            <div (click)="verPage('list-action-profile')" class="ml-2 text-center max-100">
+                <p class="m-0 mt-1 font12 limite1lign">
+                    {{ typeUser === 'if-voyageur' ? 'Toavina RAFIDISON' : 'Cotiss Madagascar' }}
+                </p>
+                <p class="m-0 d-flex justify-start font10 mt-1 line-height-15">
+                    <ion-icon size="10" class="mx-1 d-block" color="success" name="person"></ion-icon>
+                    30 contacts
+                    <ion-icon size="10" class="mx-1 ml-3 d-block" color="success" name="heart"></ion-icon>
+                    105
+                    <ion-icon class="mx-1 ml-3 d-block" size="10" color="success" name="location"></ion-icon>
+                    <span class="limite1lign">
+                        IVM 12 TER AT Ambodivona, Antananarivo 101
+                    </span>
+                </p>
+            </div>
+        </ion-grid>
+        <hr class="w-100">
+        <ion-grid class="button-action-cooperative minh30 d-flex">
+            <div class="d-flex">
+                <ion-button (click)="verPage('gestion-vehicule')" class="bg-transparent format-petite font10 no-shadow">
+                    <span class="limite1lign">
+                        Liste des véhicules
+                    </span>
+                </ion-button>
+                <ion-button (click)="verPage('destination')" class="bg-transparent format-petite font10 no-shadow">
+                    <span class="limite1lign">
+                        Destination
+                    </span>
+                </ion-button>
+                <ion-button (click)="verPage('disponibility')" class="bg-transparent format-petite font10 no-shadow activeMenu">
+                    <span class="limite1lign">
+                        Tours des voitures
+                    </span>
+                </ion-button>
+            </div>
+            <ion-icon [id]="'open-menu-profile-disponibility'" name="ellipsis-vertical"></ion-icon>
+
+            <ion-modal #modal class="fixedheightMenu3" [trigger]="'open-menu-profile-disponibility'" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                <ng-template>
+                    <ion-content scroll-y="false">
+                        <ion-list>
+                            <ion-item (click)="verPage('add-voiture')" class="bord-bot">
+                                <ion-icon name="open-outline" class="mr-2"></ion-icon>
+                                <ion-label class="font11">Ajouter une voiture</ion-label>
+                            </ion-item>
+                            <ion-item (click)="verPage('add-type-cooperative')" class="bord-bot">
+                                <ion-icon name="open-outline" class="mr-2"></ion-icon>
+                                <ion-label class="font11">Ajouter une type de voiture</ion-label>
+                            </ion-item>
+                            <ion-item (click)="verPage('add-destination')" class="bord-bot">
+                                <ion-icon name="open-outline" class="mr-2"></ion-icon>
+                                <ion-label class="font11">Ajouter une destination</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ng-template>
+            </ion-modal>
+        </ion-grid>
+        <hr class="w-100">
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="result-filtre">
+            <ion-text class="font12">
+                Tours disponibles :
+            </ion-text>
+            <ion-grid class="list-lige">
+                <div *ngFor="let itemPub of [1,2,3,4,5,6];let i =index;" class="item-lig">
+                    <ion-img class="img-voiture" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-pour-tous-450x338.jpg"></ion-img>
+                    <div class="dedails-zotra">
+                        <ion-list>
+                            <ion-list-header>
+                                <ion-label class="limite1lign">Hyundai D4D - <span>Premuim</span></ion-label>
+                                <ion-icon [id]="'open-menuDispo-'+i" name="ellipsis-vertical"></ion-icon>
+
+                                <ion-modal class="fixedheightMenu2" #modal [trigger]="'open-menuDispo-'+i" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                                    <ng-template>
+                                        <ion-content scroll-y="false">
+                                            <ion-list>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="open-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Modifier</ion-label>
+                                                </ion-item>
+                                                <ion-item class="bord-bot">
+                                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                                    <ion-label class="font11">Supprimer</ion-label>
+                                                </ion-item>
+                                            </ion-list>
+                                        </ion-content>
+                                    </ng-template>
+                                </ion-modal>
+                            </ion-list-header>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Départ :</span> Antananarivo</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Arrivée :</span> Diego Suarez</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Date du :</span> 12/08/22</ion-label>
+                            </ion-item>
+                            <ion-item lines="none">
+                                <ion-label><span class="bold">Prix :</span> <span class="color-secondary">Ar 40 000</span></ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                    <div class="flex-boutton-bottom">
+                        <ion-button class="outline-vert text-primary bg-vert">
+                            2 places disponibles
+                        </ion-button>
+                        <ion-button class="outline-secondary" (click)="verPage('reservation')" color="secondary">
+                            Choisir
+                        </ion-button>
+                        <div (click)="verPage('chaffeur')" style="display: flex;" class="position-relative">
+                            <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" class="user-profile">
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                </div>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

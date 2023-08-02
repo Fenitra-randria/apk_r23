@@ -1,0 +1,49 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Paramètres..."></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container">
+        <ion-row class="p-2">
+            <ion-col class="padcol1" size="12">
+                <div class="item-menu-show d-flex">
+                    <div class="d-flex w-100 justify-start">
+                        <ion-icon class="mr-2" src="../../../assets/icon/profile/reservation.svg"></ion-icon>
+                        Push notification
+                    </div>
+                    <ion-toggle></ion-toggle>
+                </div>
+            </ion-col>
+            <ion-col class="padcol1" size="12">
+                <div class="item-menu-show d-flex">
+                    <div class="d-flex w-100 justify-start">
+                        <ion-icon class="mr-2" src="../../../assets/icon/profile/reservation.svg"></ion-icon>
+                        Visibilité
+                    </div>
+                    <ion-toggle></ion-toggle>
+                </div>
+            </ion-col>
+            <ion-col class="padcol1" size="12">
+                <div class="item-menu-show d-flex">
+                    <div class="d-flex w-100 justify-start">
+                        <ion-icon class="mr-2" src="../../../assets/icon/profile/reservation.svg"></ion-icon>
+                        Actualités et annonces
+                    </div>
+                    <ion-toggle></ion-toggle>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

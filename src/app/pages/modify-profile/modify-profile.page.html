@@ -1,0 +1,183 @@
+<app-header></app-header>
+<ion-header>
+    <ion-grid class="bg-secondary header-cooperative h-105">
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="pageActive==='bienvenue'?dismissModal():back()" name="chevron-back"></ion-icon>
+                <div class="d-flex">
+                    <ion-icon (click)="verPage('list-discussion')" name="chatbox-ellipses-outline"></ion-icon>
+                    <ion-icon (click)="verPage('notification')" class="menus-troispoi mx-1 notif-icon" src="../../../../assets/icon/accueil/notification.svg"></ion-icon>
+                    <div (click)="verPage('infocooperative')" style="display: flex;" class="position-relative inHeader">
+                        <div class="d-flex">
+                            <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" class="user-profile">
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <ion-img class="photo-couv" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img> -->
+            </ion-grid>
+            <!-- <ion-grid *ngIf="typeUser === 'if-cooperative'" class="name-cooperative px-0 d-flex justify-start">
+                <div (click)="verPage('infocooperative')" class="image-user-cooperative position-relative">
+                    <ion-img *ngIf="typeUser === 'if-cooperative'" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                    <ion-img *ngIf="typeUser != 'if-cooperative'" src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                    <div class="actif"></div>
+                </div>
+                <div (click)="verPage('infocooperative')" class="ml-2 max-100">
+                    <p class="m-0 mt-1 font12 limite1lign">
+                        {{ typeUser === 'if-voyageur' ? 'Toavina RAFIDISON' : 'Cotiss Madagascar' }}
+                    </p>
+                    <p class="m-0 mt-4 font10 line-height-15">
+                        <ion-icon size="10" color="success" name="person"></ion-icon>
+                        30 contacts
+                        <ion-icon size="10" color="success" name="heart"></ion-icon>
+                        105
+                        <br>
+                        <span class="limite1lign">
+                            <ion-icon size="10" color="success" name="location"></ion-icon>
+                            IVM 12 TER AT Ambodivona, Antananarivo 101
+                        </span>
+                    </p>
+                </div>
+            </ion-grid> -->
+        </ion-grid>
+    </ion-grid>
+    <div class="mt-10 container py-0">
+        <ion-grid class="name-cooperative-voyageur px-0 d-flex direction-column justify-center">
+            <div (click)="verPage('list-action-profile')" class="image-user-cooperative position-relative">
+                <ion-img *ngIf="typeUser === 'if-cooperative'" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                <ion-img *ngIf="typeUser != 'if-cooperative'" src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                <div class="actif"></div>
+            </div>
+            <div (click)="verPage('list-action-profile')" class="ml-2 text-center max-100">
+                <p class="m-0 mt-1 font12 limite1lign">
+                    {{ typeUser === 'if-voyageur' ? 'Toavina RAFIDISON' : 'Cotiss Madagascar' }}
+                </p>
+                <p class="m-0 d-flex justify-start font10 mt-1 line-height-15">
+                    <ion-icon size="10" class="mx-1 d-block" color="success" name="person"></ion-icon>
+                    30 contacts
+                    <ion-icon size="10" class="mx-1 ml-3 d-block" color="success" name="heart"></ion-icon>
+                    105
+                    <ion-icon class="mx-1 ml-3 d-block" size="10" color="success" name="location"></ion-icon>
+                    <span class="limite1lign">
+                        IVM 12 TER AT Ambodivona, Antananarivo 101
+                    </span>
+                </p>
+            </div>
+        </ion-grid>
+        <hr class="w-100">
+        <ion-grid class="button-action-cooperative minh30 d-flex">
+            <ion-text class="font12 m-0">
+                Modifier mon profil
+            </ion-text>
+        </ion-grid>
+        <hr class="w-100">
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="result-filtre m-0">
+            <ion-grid class="add-voiture p-0   ">
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Coopérative :</ion-label>
+                    <ion-input value="Rafidion Dzery Hago"></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Nom du propriétaire :</ion-label>
+                    <ion-input value="Dzery Hago"></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Prénom :</ion-label>
+                    <ion-input value="Dzery Hago"></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Téléphone :</ion-label>
+                    <ion-input type="number" value="0324490143"></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Email :</ion-label>
+                    <ion-input value="Dzery@mkweblinks.com"></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Adresse :</ion-label>
+                    <ion-input value=" IVM 12 TER AT Ambodivona"></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Numero CIN :</ion-label>
+                    <ion-input class="limite1lign"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-chauffeur'||typeUser==='if-proprietaire-vehicule'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">CIN recto :</ion-label>
+                    <ion-input class="limite1lign" type="file"></ion-input>
+                    <ion-img class="details-img-add" src="https://mcmparis.files.wordpress.com/2015/06/le-loup.png" (click)="openZoomedImage('https://mcmparis.files.wordpress.com/2015/06/le-loup.png')"></ion-img>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-chauffeur'||typeUser==='if-proprietaire-vehicule'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">CIN verso :</ion-label>
+                    <ion-input class="limite1lign" type="file"></ion-input>
+                    <ion-img class="details-img-add" src="https://mcmparis.files.wordpress.com/2015/06/le-loup.png" (click)="openZoomedImage('https://mcmparis.files.wordpress.com/2015/06/le-loup.png')"></ion-img>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-chauffeur'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Permis de conduire recto :</ion-label>
+                    <ion-input class="limite1lign" type="file"></ion-input>
+                    <ion-img class="details-img-add" src="https://i1.wp.com/www.agencemalagasydepresse.com/wp-content/uploads/2019/12/permis.jpg?fit=712%2C380&ssl=1" (click)="openZoomedImage('https://i1.wp.com/www.agencemalagasydepresse.com/wp-content/uploads/2019/12/permis.jpg?fit=712%2C380&ssl=1')"></ion-img>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-chauffeur'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Permis de conduire verso :</ion-label>
+                    <ion-input class="limite1lign" type="file"></ion-input>
+                    <ion-img class="details-img-add" src="https://i1.wp.com/www.agencemalagasydepresse.com/wp-content/uploads/2019/12/permis.jpg?fit=712%2C380&ssl=1" (click)="openZoomedImage('https://i1.wp.com/www.agencemalagasydepresse.com/wp-content/uploads/2019/12/permis.jpg?fit=712%2C380&ssl=1')"></ion-img>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-cooperative'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Numero NIF :</ion-label>
+                    <ion-input class="limite1lign"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-cooperative'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">NIF recto :</ion-label>
+                    <ion-input class="limite1lign" type="file"></ion-input>
+                    <ion-img class="details-img-add" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSV-nn2Gu9TE3jTn4LvzzCEkULB5yW8ksNJJcM3b_NfuA0krUKVtN6rEPQhdZtU9dqpfo&usqp=CAU" (click)="openZoomedImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSV-nn2Gu9TE3jTn4LvzzCEkULB5yW8ksNJJcM3b_NfuA0krUKVtN6rEPQhdZtU9dqpfo&usqp=CAU')"></ion-img>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-cooperative'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">NIF verso :</ion-label>
+                    <ion-input class="limite1lign" type="file"></ion-input>
+                    <ion-img class="details-img-add" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSV-nn2Gu9TE3jTn4LvzzCEkULB5yW8ksNJJcM3b_NfuA0krUKVtN6rEPQhdZtU9dqpfo&usqp=CAU" (click)="openZoomedImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSV-nn2Gu9TE3jTn4LvzzCEkULB5yW8ksNJJcM3b_NfuA0krUKVtN6rEPQhdZtU9dqpfo&usqp=CAU')"></ion-img>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-cooperative'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Numero STAT :</ion-label>
+                    <ion-input class="limite1lign"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-cooperative'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">STAT recto :</ion-label>
+                    <ion-input class="limite1lign" type="file"></ion-input>
+                    <ion-img class="details-img-add" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRCXY9YQY5KvpQL1OxcreE3M6G2u-hD6bHVTR8KeUdJciIsYKmJajhY6_2R28myEJLKoo&usqp=CAU" (click)="openZoomedImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRCXY9YQY5KvpQL1OxcreE3M6G2u-hD6bHVTR8KeUdJciIsYKmJajhY6_2R28myEJLKoo&usqp=CAU')"></ion-img>
+                </ion-item>
+                <ion-item *ngIf="typeUser==='if-cooperative'" lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">STAT verso :</ion-label>
+                    <ion-input class="limite1lign" type="file"></ion-input>
+                    <ion-img class="details-img-add" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRCXY9YQY5KvpQL1OxcreE3M6G2u-hD6bHVTR8KeUdJciIsYKmJajhY6_2R28myEJLKoo&usqp=CAU" (click)="openZoomedImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRCXY9YQY5KvpQL1OxcreE3M6G2u-hD6bHVTR8KeUdJciIsYKmJajhY6_2R28myEJLKoo&usqp=CAU')"></ion-img>
+                </ion-item>
+            </ion-grid>
+        </ion-grid>
+        <ion-grid class="result-filtre mt-0 m-0">
+            <ion-grid class="add-voiture p-0">
+                <ion-item lines="none" class="no-pad">
+                    <ion-button (click)="valideUpdate()" [disabled]="satusLoading" color="secondary" class="register-voiture">
+                        {{ satusLoading ? '':'ENREGISTRER' }}
+                        <ion-spinner *ngIf="satusLoading" color="primary" name="bubbles"></ion-spinner>
+                    </ion-button>
+                </ion-item>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

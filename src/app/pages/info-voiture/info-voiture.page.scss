@@ -1,0 +1,239 @@
+ion-text.text-right.mb-15.font10.d-block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    height: fit-content;
+}
+
+.add-img {
+    border-radius: 22px;
+    &.gm {
+        width: 130px;
+        height: 130px;
+    }
+    &.pm {
+        width: 68px;
+        height: 68px;
+    }
+}
+
+.flex-direction1 .add-img {
+    margin-top: 5px;
+}
+
+.flex-direction1 {
+    text-align: center;
+}
+
+.menu-profile {
+    width: 100%;
+    flex-wrap: wrap;
+    ion-icon {
+        margin-right: 6px;
+    }
+}
+
+ion-icon.menus-troispoi {
+    font-size: 25px !important;
+}
+
+.absolute-menu {
+    position: absolute;
+    right: 8px;
+    font-size: 18px;
+}
+
+.font12 {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.item-menu {
+    width: calc(50% - 3px);
+    .header-slote {
+        display: flex;
+        height: 38px;
+        padding: 0 10px;
+        background-color: #ff3354;
+        font-size: 10px !important;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        ion-icon {
+            font-size: 16px;
+        }
+    }
+    ion-item {
+        --min-height: 10px;
+        --padding-start: 0;
+        ion-radio {
+            margin: 0;
+            background-color: #fff;
+            position: absolute;
+            right: 0;
+            --color: #fff!important;
+            width: 15px;
+            height: 15PX;
+            border-radius: 50%;
+            --color-checked: #ff3354;
+        }
+    }
+}
+
+.wh36 {
+    width: 36px!important;
+    height: 36px!important;
+    min-width: 36px!important;
+    .actif {
+        bottom: 0;
+    }
+}
+
+.item-conversation {
+    padding: 7px 0;
+    border: 1px rgba(112, 112, 112, 0.168627451) solid;
+    border-left: 0;
+    border-right: 0;
+}
+
+.list-lige .item-lig .dedails-zotra {
+    width: calc(100% - 80px);
+}
+
+.list-lige .item-lig .dedails-zotra ion-list ion-list-header ion-label {
+    text-align: left;
+}
+
+.list-lige .item-lig ion-img.img-voiture {
+    height: 110px!important;
+}
+
+.item-lig:first-child {
+    margin-top: 0;
+}
+
+ion-img.img-voiture {
+    height: 110px!important;
+}
+
+.position-relative .flex-boutton-top ion-icon.delete {
+    background-color: #ff3354;
+    border-radius: 50%;
+    border: 1px #fff solid;
+}
+
+.img-voiture {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.list-lige .item-lig {
+    background-color: transparent!important;
+}
+
+.dedails-zotra {
+    background-color: #fff;
+    margin-right: 5px;
+    border-radius: 5px;
+    position: relative;
+    .flex-boutton-bottom {
+        bottom: 8px;
+        right: 8px;
+    }
+}
+
+.button-action-cooperative ion-button.format-petite.font10 {
+    position: relative;
+}
+
+.list-lige .item-lig .flex-boutton-bottom {
+    bottom: 8px;
+}
+
+.activeMenu::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    bottom: -12px;
+    background-color: #c3d830;
+    left: 0;
+    width: 100%;
+}
+
+.ml-2.max-100 {
+    max-width: calc(100% - 80px);
+}
+
+.menu-profile.d-flex {
+    align-items: flex-start!important;
+}
+
+ion-label.d-flex {
+    display: flex!important;
+}
+
+.menu-profile {
+    width: 100%;
+    flex-wrap: wrap;
+    ion-icon {
+        margin-right: 6px;
+    }
+}
+
+.item-menu {
+    width: calc(50% - 3px);
+    .header-slote {
+        display: flex;
+        height: 38px;
+        padding: 0 10px;
+        background-color: #ff3354;
+        font-size: 10px !important;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        ion-icon {
+            font-size: 16px;
+        }
+    }
+    ion-item {
+        --min-height: 10px;
+        --padding-start: 0;
+        ion-radio {
+            margin: 0;
+            background-color: #fff;
+            position: absolute;
+            right: 0;
+            --color: #fff!important;
+            width: 15px;
+            height: 15PX;
+            border-radius: 50%;
+            --color-checked: #ff3354;
+        }
+    }
+}
+
+.p-6 {
+    padding: 30px;
+}
+
+.menu-profile.d-flex {
+    align-items: flex-start!important;
+}
+
+ion-label.d-flex {
+    display: flex!important;
+}
+
+ion-img.img-carre {
+    width: 50px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 7px;
+    overflow: hidden;
+}

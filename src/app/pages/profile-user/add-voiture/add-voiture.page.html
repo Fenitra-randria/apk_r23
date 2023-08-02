@@ -1,0 +1,130 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Ajouter votre véhicule"></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="result-filtre">
+            <ion-grid class="add-voiture">
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Type de voiture :</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Numéro du voiture :</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Nombre de place :</ion-label>
+                    <ion-select interface="popover" class="d-flex customize">
+                        <ion-select-option value="16 places">16 places</ion-select-option>
+                        <ion-select-option value="18 places">18 places</ion-select-option>
+                        <ion-select-option value="22 places">22 places</ion-select-option>
+                    </ion-select>
+                    <!-- <div style="display: flex;" class="position-relative absolute-img-user">
+                        <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" (click)="verProfile()" class="user-profile">
+                        <div class="actif"></div>
+                    </div> -->
+                </ion-item>
+            </ion-grid>
+        </ion-grid>
+        <hr class="w-100">
+        <ion-grid class="place-dispo">
+            <div class="details-place d-flex align-start m-0">
+                <div class="w-50 item-flex">
+                    <ion-list class="p-0">
+                        <ion-item lines="none">
+                            <div class="color color-chaffeur">
+                                <ion-icon dark name="person-outline"></ion-icon>
+                            </div>
+                            <ion-label class="font11">Chauffeur</ion-label>
+                        </ion-item>
+                    </ion-list>
+                    <ion-text color="success" class="font11 mt-8 d-block text-success">
+                        Sélectionner le numéro et puis vous pouvez le déplacer pour finir votre organisation de place.
+                    </ion-text>
+                </div>
+                <div class="w-50 item-flex">
+                    <ion-row>
+                        <ion-col *ngFor="let itemPlace of MyPlace;let i =index;" size="3">
+                            <div (click)="addPlace(itemPlace.numero,i)" [class]="{'color-reserver':itemPlace.statusPlace==='reserver','color-vos-place':itemPlace.statusPlace==='MyPlace','color-place-libre':itemPlace.statusPlace==='libre','color-encours-reservation':itemPlace.statusPlace==='EncoursReservation'}"
+                                class="color" *ngIf="itemPlace.statusPlace != 'chauffeur' && itemPlace.statusPlace != 'vide'">
+                                {{ itemPlace.numero }}
+                            </div>
+                            <div class="color color-chaffeur" *ngIf="itemPlace.statusPlace === 'chauffeur'">
+                                <ion-icon *ngIf="itemPlace.statusPlace === 'chauffeur'" dark name="person-outline"></ion-icon>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </ion-grid>
+        <hr *ngIf="destinationIndex >0" class="w-100">
+        <div class="list-des w-100">
+            <ion-grid *ngFor="let itemPub of destinations;let i =index;" class="result-filtre borderbottom2 mt-1">
+                <ion-text class="font12 m-0">
+                    Ajouter le destination pour cette voiture
+                </ion-text>
+                <ion-grid class="add-voiture">
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Type de coopérative :</ion-label>
+                        <ion-select interface="popover" class="d-flex customize">
+                            <ion-select-option value="Standard">Standard</ion-select-option>
+                            <ion-select-option value="Vip">Vip</ion-select-option>
+                            <ion-select-option value="Prenium">Prenium</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Départ :</ion-label>
+                        <ion-select interface="popover" class="d-flex customize">
+                            <ion-select-option value="Antananarivo">Antananarivo</ion-select-option>
+                            <ion-select-option value="Tamatave">Tamatave</ion-select-option>
+                            <ion-select-option value="Fianarantsoa">Fianarantsoa</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">à :</ion-label>
+                        <ion-select interface="popover" class="d-flex customize">
+                            <ion-select-option value="Antananarivo">Antananarivo</ion-select-option>
+                            <ion-select-option value="Tamatave">Tamatave</ion-select-option>
+                            <ion-select-option value="Fianarantsoa">Fianarantsoa</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Frais par personne :</ion-label>
+                        <ion-input type="number"></ion-input>
+                        <ion-label slot="end" class="float-right font11 absolute-img-user">
+                            en Ariary
+                        </ion-label>
+                    </ion-item>
+                    <div class="d-flex justify-end">
+                        <ion-label (click)="incrementDestination()" *ngIf="i+1 === destinations.length" class="font11 text-right d-block mr-4 w-100 mr-0">Ajouter une autre destination pour ce voiture</ion-label>
+                        <ion-label (click)="decrementDestination()" *ngIf="i+1 != destinations.length" class="font11 text-right d-block mr-4 w-100 mr-0">Supprimer ce destination</ion-label>
+                    </div>
+                </ion-grid>
+            </ion-grid>
+        </div>
+        <ion-grid class="result-filtre mt-0 m-0">
+            <ion-grid class="add-voiture p-0">
+                <ion-item lines="none" class="no-pad">
+                    <ion-button (click)="valideUpdate()" [disabled]="satusLoading" color="secondary" class="register-voiture">
+                        {{ satusLoading ? '':'ENREGISTRER' }}
+                        <ion-spinner *ngIf="satusLoading" color="primary" name="bubbles"></ion-spinner>
+                    </ion-button>
+                </ion-item>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <!-- <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon> -->
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

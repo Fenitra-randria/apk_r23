@@ -1,0 +1,182 @@
+<ion-content class="ion-padding">
+    <ion-modal #modal [trigger]="'open-modal'+pageActive" [initialBreakpoint]="0.5" [breakpoints]="[0, 0.25, 0.5, 0.75,1]">
+        <ng-template>
+            <ion-content *ngIf="MenuShowBottom === 'depart' || MenuShowBottom === 'arrive'">
+                <ion-searchbar class="search text-dark" placeholder="Recherche..." (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+                <ion-list>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://i.ytimg.com/vi/cZiZAqsOrJE/maxresdefault.jpg"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Antananarivo</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxoMgcnq6p_aRSGGGz1Bs9gDfZqsls4MKIg&usqp=CAU"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Fianaratsoa</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdLwdifmoATv2YsZOAX7Rm5RaK0hno4FJ6DmN2F1HMFNQorxAlPanKIrTsG49lkg-X2c&usqp=CAU"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Mahajanga</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://youimg1.tripcdn.com/target/100711000000rijpoD13E_C_640_320_R5_Q70.jpg_.webp?proc=source%2Ftrip"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Toliara</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://i.ytimg.com/vi/cZiZAqsOrJE/maxresdefault.jpg"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Antananarivo</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxoMgcnq6p_aRSGGGz1Bs9gDfZqsls4MKIg&usqp=CAU"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Fianaratsoa</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdLwdifmoATv2YsZOAX7Rm5RaK0hno4FJ6DmN2F1HMFNQorxAlPanKIrTsG49lkg-X2c&usqp=CAU"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Mahajanga</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://youimg1.tripcdn.com/target/100711000000rijpoD13E_C_640_320_R5_Q70.jpg_.webp?proc=source%2Ftrip"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Toliara</h5>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+            <ion-content *ngIf="MenuShowBottom === 'date'">
+                <div class="p-6">
+                    <ion-calendar (change)="dismissMenu()" [(ngModel)]="date" [type]="type" [format]="'YYYY-MM-DD'">
+                    </ion-calendar>
+                </div>
+            </ion-content>
+            <ion-content *ngIf="MenuShowBottom === 'Horaires'">
+                <ion-searchbar class="search text-dark" placeholder="Recherche..." (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+                <ion-list>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Matin</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Midi</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Soir</h5>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+            <ion-content *ngIf="MenuShowBottom === 'categorie'">
+                <ion-searchbar class="search text-dark" placeholder="Recherche..." (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+                <ion-list>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Vip</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Prix global</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Place special</h5>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+            <ion-content *ngIf="MenuShowBottom === 'cooperative'">
+                <ion-searchbar class="search text-dark" placeholder="Recherche..." (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+                <ion-list>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Cotiss Madagascar</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbtfhKqiH3AfbC7oUYCrFb2_ksUNw8qLFO4Q&usqp=CAU"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Trans Tafita</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Cotiss Madagascar</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbtfhKqiH3AfbC7oUYCrFb2_ksUNw8qLFO4Q&usqp=CAU"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Trans Tafita</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Cotiss Madagascar</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbtfhKqiH3AfbC7oUYCrFb2_ksUNw8qLFO4Q&usqp=CAU"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Trans Tafita</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Cotiss Madagascar</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbtfhKqiH3AfbC7oUYCrFb2_ksUNw8qLFO4Q&usqp=CAU"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Trans Tafita</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Cotiss Madagascar</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbtfhKqiH3AfbC7oUYCrFb2_ksUNw8qLFO4Q&usqp=CAU"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Trans Tafita</h5>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item (click)="dismissMenu()">
+                        <ion-img class="img-carre" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                        <ion-label>
+                            <h5 class="font11">Cotiss Madagascar</h5>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+</ion-content>

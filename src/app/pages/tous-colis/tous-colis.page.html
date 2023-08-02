@@ -1,0 +1,208 @@
+<app-header></app-header>
+<ion-header>
+    <ion-grid class="bg-secondary header-cooperative h-105">
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="pageActive==='bienvenue'?dismissModal():back()" name="chevron-back"></ion-icon>
+                <div class="d-flex">
+                    <ion-icon (click)="verPage('list-discussion')" name="chatbox-ellipses-outline"></ion-icon>
+                    <ion-icon (click)="verPage('notification')" class="menus-troispoi mx-1 notif-icon" src="../../../../assets/icon/accueil/notification.svg"></ion-icon>
+                    <div (click)="verPage('infocooperative')" style="display: flex;" class="position-relative inHeader">
+                        <div class="d-flex">
+                            <img src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png" alt="" class="user-profile">
+                            <div class="actif"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <ion-img class="photo-couv" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img> -->
+            </ion-grid>
+            <!-- <ion-grid *ngIf="typeUser === 'if-cooperative'" class="name-cooperative px-0 d-flex justify-start">
+                <div (click)="verPage('infocooperative')" class="image-user-cooperative position-relative">
+                    <ion-img *ngIf="typeUser === 'if-cooperative'" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                    <ion-img *ngIf="typeUser != 'if-cooperative'" src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                    <div class="actif"></div>
+                </div>
+                <div (click)="verPage('infocooperative')" class="ml-2 max-100">
+                    <p class="m-0 mt-1 font12 limite1lign">
+                        {{ typeUser === 'if-voyageur' ? 'Toavina RAFIDISON' : 'Cotiss Madagascar' }}
+                    </p>
+                    <p class="m-0 mt-4 font10 line-height-15">
+                        <ion-icon size="10" color="success" name="person"></ion-icon>
+                        30 contacts
+                        <ion-icon size="10" color="success" name="heart"></ion-icon>
+                        105
+                        <br>
+                        <span class="limite1lign">
+                            <ion-icon size="10" color="success" name="location"></ion-icon>
+                            IVM 12 TER AT Ambodivona, Antananarivo 101
+                        </span>
+                    </p>
+                </div>
+            </ion-grid> -->
+        </ion-grid>
+    </ion-grid>
+    <div class="mt-10 container py-0">
+        <ion-grid class="name-cooperative-voyageur px-0 d-flex direction-column justify-center">
+            <div (click)="verPage('list-action-profile')" class="image-user-cooperative position-relative">
+                <ion-img *ngIf="typeUser === 'if-cooperative'" src="https://annuaire.mg/wp-content/uploads/2016/07/Cotisse-logo.png"></ion-img>
+                <ion-img *ngIf="typeUser != 'if-cooperative'" src="https://img.20mn.fr/grQ_XhhvSsuO31EHXqSBxCk/1200x768_acteur-john-travolta"></ion-img>
+                <div class="actif"></div>
+            </div>
+            <div (click)="verPage('list-action-profile')" class="ml-2 text-center max-100">
+                <p class="m-0 mt-1 font12 limite1lign">
+                    {{ typeUser === 'if-voyageur' ? 'Toavina RAFIDISON' : 'Cotiss Madagascar' }}
+                </p>
+                <p class="m-0 d-flex justify-start font10 mt-1 line-height-15">
+                    <ion-icon size="10" class="mx-1 d-block" color="success" name="person"></ion-icon>
+                    30 contacts
+                    <ion-icon size="10" class="mx-1 ml-3 d-block" color="success" name="heart"></ion-icon>
+                    105
+                    <ion-icon class="mx-1 ml-3 d-block" size="10" color="success" name="location"></ion-icon>
+                    <span class="limite1lign">
+                        IVM 12 TER AT Ambodivona, Antananarivo 101
+                    </span>
+                </p>
+            </div>
+        </ion-grid>
+        <hr class="w-100">
+        <ion-grid class="button-action-cooperative minh30 d-flex">
+            <div class="d-flex">
+                <ion-button (click)="show('Demande de livraison')" [class]="showActive==='Demande de livraison'?'active':''" class="bg-transparent format-petite font10 no-shadow activeMenu">
+                    <span class="limite1lign">
+                        Demande de livraison
+                    </span>
+                </ion-button>
+                <ion-button (click)="show('Colis réfuser')" [class]="showActive==='Colis réfuser'?'active':''" class="bg-transparent format-petite font10 no-shadow">
+                    <span class="limite1lign">
+                        Colis réfuser
+                    </span>
+                </ion-button>
+                <ion-button (click)="show('Colis livrés')" [class]="showActive==='Colis livrés'?'active':''" class="bg-transparent format-petite font10 no-shadow">
+                    <span class="limite1lign">
+                        Colis livrés
+                    </span>
+                </ion-button>
+            </div>
+            <ion-icon [id]="'open-menu-profile-all-colis'" name="ellipsis-vertical"></ion-icon>
+
+            <ion-modal #modal class="fixedheightMenu1" [trigger]="'open-menu-profile-all-colis'" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                <ng-template>
+                    <ion-content scroll-y="false">
+                        <ion-list>
+                            <ion-item (click)="verPage('form-envoye-colis')" class="bord-bot">
+                                <ion-icon name="open-outline" class="mr-2"></ion-icon>
+                                <ion-label class="font11">Envoyer un colis</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ng-template>
+            </ion-modal>
+        </ion-grid>
+        <hr class="w-100">
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <div *ngIf="showActive==='Demande de livraison'" class="list-conversation w-100">
+            <div *ngFor="let itemPub of [1,2,3,4,5,6];let i =index;" class="d-flex justify-start item-conversation">
+                <div class="image-user-globale position-relative">
+                    <ion-img (click)="verPage('chaffeur')" src="https://asialyst.com/fr/wp-content/uploads/2021/02/jack-ma-alibaba-chine.jpeg"></ion-img>
+                    <ion-badge (click)="verPage('chaffeur')" class="actif-icon" color="#fff">
+                        <ion-img src="https://www.nautiljon.com/images/more/02/25/200552.jpg"></ion-img>
+                    </ion-badge>
+                </div>
+                <div class="details-mes ml-2 w-100">
+                    <div class="d-flex">
+                        <div class="h-100 d-flex">
+                            <div class=" line-height-15">
+                                <p class="m-0 font10 limite1lign">Colis de : Rakotondrazaka Heriniaina</p>
+                                <p class="m-0 font10 limite1lign">Envoyé à : Tana par 88 49 TBK</p>
+                                <p class="m-0 font10 limite1lign">Départ : Antananarivo à 10h00</p>
+                            </div>
+                        </div>
+                        <div>
+                            <ion-button color="success" class="format-petite d-block w-100 minw-75 font10">
+                                En attente
+                            </ion-button>
+                            <ion-button color="secondary" class="format-petite d-block w-100 minw-75 font10">
+                                Détails
+                            </ion-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="showActive==='Colis réfuser'" class="list-conversation w-100">
+            <div *ngFor="let itemPub of [1,2,3,4,5,6];let i =index;" class="d-flex justify-start item-conversation">
+                <div class="image-user-globale position-relative">
+                    <ion-img (click)="verPage('chaffeur')" src="https://asialyst.com/fr/wp-content/uploads/2021/02/jack-ma-alibaba-chine.jpeg"></ion-img>
+                    <ion-badge (click)="verPage('chaffeur')" class="actif-icon" color="#fff">
+                        <ion-img src="https://www.nautiljon.com/images/more/02/25/200552.jpg"></ion-img>
+                    </ion-badge>
+                </div>
+                <div class="details-mes ml-2 w-100">
+                    <div class="d-flex">
+                        <div class="h-100 d-flex">
+                            <div class=" line-height-15">
+                                <p class="m-0 font10 limite1lign">Colis de : Rakotondrazaka Heriniaina</p>
+                                <p class="m-0 font10 limite1lign">Envoyé à : Tana par 88 49 TBK</p>
+                                <p class="m-0 font10 limite1lign">Départ : Antananarivo à 10h00</p>
+                            </div>
+                        </div>
+                        <div>
+                            <ion-button color="dark" class="format-petite d-block w-100 minw-75 font10">
+                                Restaurer
+                            </ion-button>
+                            <ion-button color="secondary" class="format-petite d-block w-100 minw-75 font10">
+                                Détails
+                            </ion-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="showActive==='Colis livrés'" class="list-conversation w-100">
+            <div *ngFor="let itemPub of [1,2,3,4,5,6];let i =index;" class="d-flex justify-start item-conversation">
+                <div class="image-user-globale position-relative">
+                    <ion-img (click)="verPage('chaffeur')" src="https://asialyst.com/fr/wp-content/uploads/2021/02/jack-ma-alibaba-chine.jpeg"></ion-img>
+                    <ion-badge (click)="verPage('chaffeur')" class="actif-icon" color="#fff">
+                        <ion-img src="https://www.nautiljon.com/images/more/02/25/200552.jpg"></ion-img>
+                    </ion-badge>
+                </div>
+                <div class="details-mes ml-2 w-100">
+                    <div class="d-flex">
+                        <div class="h-100 d-flex">
+                            <div class=" line-height-15">
+                                <p class="m-0 font10 limite1lign">Colis de : Rakotondrazaka Heriniaina</p>
+                                <p class="m-0 font10 limite1lign">Envoyé à : Tana par 88 49 TBK</p>
+                                <p class="m-0 font10 limite1lign">Départ : Antananarivo à 10h00</p>
+                            </div>
+                        </div>
+                        <div>
+                            <ion-button color="success" class="format-petite d-block w-100 minw-75 font10">
+                                Livré
+                            </ion-button>
+                            <ion-button color="secondary" class="format-petite d-block w-100 minw-75 font10">
+                                Détails
+                            </ion-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

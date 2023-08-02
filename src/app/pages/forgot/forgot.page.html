@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="prev()" name="chevron-back-outline"></ion-icon>
+            </ion-grid>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="center-titre">
+            <ion-icon src="../../assets/icon/home/voiture.svg"></ion-icon>
+            <ion-text class="mb-15 d-block">
+                Si vous désirez récupérer votre mot de passe, Vous pouvez le faire à tout moment
+            </ion-text>
+            <div class="login-register">
+                <div class="form-input mb-15">
+                    <ion-label>Tapez votre numéro de téléphone</ion-label>
+                    <ion-input type="number"></ion-input>
+                </div>
+                <ion-button (click)="sign()" color="secondary" class="register">
+                    ENVOYER VOTRE MOT DE PASSE
+                </ion-button>
+            </div>
+        </ion-grid>
+    </ion-grid>
+</ion-content>

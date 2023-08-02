@@ -1,0 +1,26 @@
+ion-grid.center-titre {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    ion-icon {
+        font-size: 150px;
+        margin-bottom: -70px;
+    }
+    ion-text {
+        font-family: 'gilroy-light';
+        text-align: center;
+    }
+}
+
+.login-register {
+    height: fit-content;
+    ion-button {
+        margin: 5px 0;
+    }
+}
+
+.login {
+    --background: #C3D830;
+}

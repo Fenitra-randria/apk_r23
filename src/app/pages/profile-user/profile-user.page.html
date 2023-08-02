@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid class="container absolute-header">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="prev()" name="chevron-back-outline"></ion-icon>
+                <ion-icon class="menus-troispoi" name="ellipsis-vertical"></ion-icon>
+            </ion-grid>
+        </ion-grid>
+        <ion-img class="bg-header" src="../../../../assets/icon/register/bh-header.svg"></ion-img>
+        <div class="ajout-pdp">
+            <div [ngClass]="image ? 'avec-border' : ''" class="add-img">
+                <img *ngIf="image" [src]="image" alt="">
+                <input accept="image/*" (change)="onSelectFilePub($event)" type="file" id="logo" class="upload-img">
+            </div>
+            <ion-label>Cotiss Madagascar</ion-label>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="menu-profile w-100">
+            <div class="item-menu">
+                <ion-icon src="../../../assets/icon/profile/msg.svg"></ion-icon>
+                Message
+                <div class="count">
+                    1
+                </div>
+            </div>
+            <div class="item-menu">
+                <ion-icon src="../../../assets/icon/profile/reservation.svg"></ion-icon>
+                Réservation
+                <div class="count">
+                    5
+                </div>
+            </div>
+            <div class="item-menu">
+                <ion-icon src="../../../assets/icon/profile/coli.svg"></ion-icon>
+                Envoi du colis
+                <div class="count">
+                    10
+                </div>
+            </div>
+        </ion-grid>
+    </ion-grid>
+</ion-content>

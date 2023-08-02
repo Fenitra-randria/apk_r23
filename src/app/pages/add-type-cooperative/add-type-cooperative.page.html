@@ -1,0 +1,113 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Ajouter votre type de coopérative"></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="result-filtre">
+            <div class="d-flex my-1">
+                <ion-item lines="none" class="no-pad my-1">
+                    <ion-checkbox class="pointer-none" class="m-0" slot="start"></ion-checkbox>
+                    <ion-label class="m-0 pl-1 font11">VIP</ion-label>
+                </ion-item>
+                <ion-icon [id]="'open-menu-profile-vip'" name="ellipsis-vertical"></ion-icon>
+
+                <ion-modal #modal class="fixedheightMenu2" [trigger]="'open-menu-profile-vip'" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                    <ng-template>
+                        <ion-content scroll-y="false">
+                            <ion-list>
+                                <ion-item class="bord-bot">
+                                    <ion-icon name="create-outline" class="mr-2"></ion-icon>
+                                    <ion-label class="font11">Modifier</ion-label>
+                                </ion-item>
+                                <ion-item class="bord-bot">
+                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                    <ion-label class="font11">Supprimer</ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
+            </div>
+            <div class="d-flex my-1">
+                <ion-item lines="none" class="no-pad my-1">
+                    <ion-checkbox class="pointer-none" class="m-0" slot="start"></ion-checkbox>
+                    <ion-label class="m-0 pl-1 font11">Classe</ion-label>
+                </ion-item>
+                <ion-icon [id]="'open-menu-profile-class'" name="ellipsis-vertical"></ion-icon>
+
+                <ion-modal #modal class="fixedheightMenu2" [trigger]="'open-menu-profile-class'" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                    <ng-template>
+                        <ion-content scroll-y="false">
+                            <ion-list>
+                                <ion-item class="bord-bot">
+                                    <ion-icon name="create-outline" class="mr-2"></ion-icon>
+                                    <ion-label class="font11">Modifier</ion-label>
+                                </ion-item>
+                                <ion-item class="bord-bot">
+                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                    <ion-label class="font11">Supprimer</ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
+            </div>
+            <div class="d-flex my-1">
+                <ion-item lines="none" class="no-pad my-1">
+                    <ion-checkbox class="pointer-none" class="m-0" slot="start"></ion-checkbox>
+                    <ion-label class="m-0 pl-1 font11">Prenuim</ion-label>
+                </ion-item>
+                <ion-icon [id]="'open-menu-profile-Prenuim'" name="ellipsis-vertical"></ion-icon>
+
+                <ion-modal #modal class="fixedheightMenu2" [trigger]="'open-menu-profile-Prenuim'" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                    <ng-template>
+                        <ion-content scroll-y="false">
+                            <ion-list>
+                                <ion-item class="bord-bot">
+                                    <ion-icon name="create-outline" class="mr-2"></ion-icon>
+                                    <ion-label class="font11">Modifier</ion-label>
+                                </ion-item>
+                                <ion-item class="bord-bot">
+                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                    <ion-label class="font11">Supprimer</ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
+            </div>
+        </ion-grid>
+        <hr class="w-100">
+        <div class="list-des w-100">
+            <ion-grid class="result-filtre">
+                <ion-grid class="add-voiture">
+                    <ion-item *ngFor="let itemType of typeAdded;let i =index;" lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Type {{i+1}} : </ion-label>
+                        <ion-input placeholder="Ex : Classe"></ion-input>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label (click)="addOtherType()" class="font11 text-right d-block mr-0">Ajouter une autre type</ion-label>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-button (click)="verPage('add-destination')" color="secondary" class="register-voiture mr-0">
+                            VALIDER VOTRE CHOIX
+                        </ion-button>
+                    </ion-item>
+                </ion-grid>
+            </ion-grid>
+        </div>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <!-- <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon> -->
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

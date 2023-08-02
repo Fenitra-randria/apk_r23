@@ -1,0 +1,217 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Ajouter votre destination"></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container direction-column py-0">
+        <ion-grid class="result-filtre">
+            <div class="d-flex my-1">
+                <ion-item lines="none" class="no-pad my-1">
+                    <ion-checkbox class="m-0" slot="start"></ion-checkbox>
+                    <ion-label class="m-0 pl-1 font11">Antananarivo - Tamatave</ion-label>
+                </ion-item>
+                <div class="d-flex w-custom">
+                    <ion-label class="m-0 pr-3 font11">30 000Ariary</ion-label>
+                    <ion-icon [id]="'open-menu-profile-vip'" name="ellipsis-vertical"></ion-icon>
+                </div>
+
+                <ion-modal #modal class="fixedheightMenu1" [trigger]="'open-menu-profile-vip'" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                    <ng-template>
+                        <ion-content scroll-y="false">
+                            <ion-list>
+                                <ion-item class="bord-bot">
+                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                    <ion-label class="font11">Supprimer</ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
+            </div>
+            <div class="d-flex my-1">
+                <ion-item lines="none" class="no-pad my-1">
+                    <ion-checkbox class="m-0" slot="start"></ion-checkbox>
+                    <ion-label class="m-0 pl-1 font11">Tamatave - Antananarivo</ion-label>
+                </ion-item>
+                <div class="d-flex w-custom">
+                    <ion-label class="m-0 pr-3 font11">30 000Ariary</ion-label>
+                    <ion-icon [id]="'open-menu-profile-class'" name="ellipsis-vertical"></ion-icon>
+                </div>
+
+                <ion-modal #modal class="fixedheightMenu1" [trigger]="'open-menu-profile-class'" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                    <ng-template>
+                        <ion-content scroll-y="false">
+                            <ion-list>
+                                <ion-item class="bord-bot">
+                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                    <ion-label class="font11">Supprimer</ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
+            </div>
+            <div class="d-flex my-1">
+                <ion-item lines="none" class="no-pad my-1">
+                    <ion-checkbox class="m-0" slot="start"></ion-checkbox>
+                    <ion-label class="m-0 pl-1 font11">Antananarivo - Majunga</ion-label>
+                </ion-item>
+                <div class="d-flex w-custom">
+                    <ion-label class="m-0 pr-3 font11">30 000Ariary</ion-label>
+                    <ion-icon [id]="'open-menu-profile-Prenuim'" name="ellipsis-vertical"></ion-icon>
+                </div>
+                <ion-modal #modal class="fixedheightMenu1" [trigger]="'open-menu-profile-Prenuim'" [initialBreakpoint]="1" [breakpoints]="[0,1]">
+                    <ng-template>
+                        <ion-content scroll-y="false">
+                            <ion-list>
+                                <ion-item class="bord-bot">
+                                    <ion-icon name="trash-outline" class="mr-2"></ion-icon>
+                                    <ion-label class="font11">Supprimer</ion-label>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ng-template>
+                </ion-modal>
+            </div>
+        </ion-grid>
+        <hr class="w-100">
+        <ion-grid class="result-filtre m-0 ">
+            <ion-grid class="add-voiture p-0 mt-1">
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Départ :</ion-label>
+                    <ion-select interface="popover" class="d-flex customize">
+                        <ion-select-option value="Antananarivo">Antananarivo</ion-select-option>
+                        <ion-select-option value="Tamatave">Tamatave</ion-select-option>
+                        <ion-select-option value="Fianarantsoa">Fianarantsoa</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">à :</ion-label>
+                    <ion-select interface="popover" class="d-flex customize">
+                        <ion-select-option value="Antananarivo">Antananarivo</ion-select-option>
+                        <ion-select-option value="Tamatave">Tamatave</ion-select-option>
+                        <ion-select-option value="Fianarantsoa">Fianarantsoa</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Frais par personne :</ion-label>
+                    <ion-input type="number"></ion-input>
+                    <ion-label slot="end" class="float-right font11 absolute-img-user">
+                        en Ariary
+                    </ion-label>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Type de coopérative :</ion-label>
+                    <ion-select interface="popover" class="d-flex customize">
+                        <ion-select-option value="Antananarivo">Prenium</ion-select-option>
+                        <ion-select-option value="Tamatave">Basic</ion-select-option>
+                        <ion-select-option value="Fianarantsoa">Standard</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Responsable :</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Tél. 1 :</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Tél. 2 :</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="no-pad">
+                    <ion-label class="font11 text-right d-block mr-4 w25">Tél. 3 :</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+                <div class="d-flex justify-end">
+                    <ion-label (click)="incrementDestination()" *ngIf="destinationIndex === 0" class="m-0 font11 text-right d-block mr-4 w-100 mr-0">Ajouter une autre destination</ion-label>
+                    <ion-label (click)="decrementDestination()" *ngIf="destinationIndex > 0" class="font11 text-right d-block mr-4 w-100 mr-0">Supprimer ce destination</ion-label>
+                </div>
+            </ion-grid>
+        </ion-grid>
+        <hr *ngIf="destinationIndex >0" class="w-100">
+        <div class="list-des w-100">
+            <ion-grid *ngFor="let itemPub of destinations;let i =index;" class="result-filtre m-0  borderbottom2 mt-1">
+                <ion-text class="font12">
+                    Ajouter une autre destination
+                </ion-text>
+                <ion-grid class="add-voiture p-0 mt-1">
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Départ :</ion-label>
+                        <ion-select interface="popover" class="d-flex customize">
+                            <ion-select-option value="Antananarivo">Antananarivo</ion-select-option>
+                            <ion-select-option value="Tamatave">Tamatave</ion-select-option>
+                            <ion-select-option value="Fianarantsoa">Fianarantsoa</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">à :</ion-label>
+                        <ion-select interface="popover" class="d-flex customize">
+                            <ion-select-option value="Antananarivo">Antananarivo</ion-select-option>
+                            <ion-select-option value="Tamatave">Tamatave</ion-select-option>
+                            <ion-select-option value="Fianarantsoa">Fianarantsoa</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Frais par personne :</ion-label>
+                        <ion-input type="number"></ion-input>
+                        <ion-label slot="end" class="float-right font11 absolute-img-user">
+                            en Ariary
+                        </ion-label>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Type de coopérative :</ion-label>
+                        <ion-select interface="popover" class="d-flex customize">
+                            <ion-select-option value="Antananarivo">Prenium</ion-select-option>
+                            <ion-select-option value="Tamatave">Basic</ion-select-option>
+                            <ion-select-option value="Fianarantsoa">Standard</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Responsable :</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Tél. 1 :</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Tél. 2 :</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                    <ion-item lines="none" class="no-pad">
+                        <ion-label class="font11 text-right d-block mr-4 w25">Tél. 3 :</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                    <div class="d-flex justify-end">
+                        <ion-label (click)="incrementDestination()" *ngIf="i+1 === destinations.length" class="font11 text-right d-block mr-4 w-100 mr-0">Ajouter une autre destination</ion-label>
+                        <ion-label (click)="decrementDestination()" *ngIf="i+1 != destinations.length" class="font11 text-right d-block mr-4 w-100 mr-0">Supprimer ce destination</ion-label>
+                    </div>
+                </ion-grid>
+            </ion-grid>
+        </div>
+        <ion-grid class="result-filtre m-0  mt-0 m-0">
+            <ion-grid class="add-voiture p-0 mt-1 p-0">
+                <ion-item lines="none" class="no-pad">
+                    <ion-button (click)="valideUpdate()" [disabled]="satusLoading" color="secondary" class="register-voiture">
+                        {{ satusLoading ? '':'ENREGISTRER' }}
+                        <ion-spinner *ngIf="satusLoading" color="primary" name="bubbles"></ion-spinner>
+                    </ion-button>
+                </ion-item>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <!-- <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon> -->
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

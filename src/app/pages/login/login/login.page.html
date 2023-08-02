@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="prev()" name="chevron-back-outline"></ion-icon>
+            </ion-grid>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="center-titre">
+            <ion-icon src="../../assets/icon/home/voiture.svg"></ion-icon>
+            <ion-text class="mb-15 d-block">
+                Si vous désirez modifier votre mot de passe,<br> Vous pouvez le faire à tout moment.
+            </ion-text>
+            <div class="login-register">
+                <div class="form-input">
+                    <ion-label>Téléphone</ion-label>
+                    <ion-input type="number"></ion-input>
+                </div>
+                <div class="form-input">
+                    <ion-label>Mot de passe</ion-label>
+                    <ion-input type="password"></ion-input>
+                    <ion-text (click)="forgot()" class="text-right mb-15 font10 d-block">
+                        Mot de passe oublié ?
+                    </ion-text>
+                </div>
+                <ion-button (click)="sign()" color="secondary" class="register">
+                    Se connecter
+                </ion-button>
+            </div>
+        </ion-grid>
+    </ion-grid>
+</ion-content>

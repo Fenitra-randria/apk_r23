@@ -1,0 +1,47 @@
+ion-grid.center-titre {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    ion-icon {
+        font-size: 150px;
+        height: 75px;
+    }
+    ion-text {
+        font-family: 'gilroy-light';
+        text-align: center;
+    }
+}
+
+.login-register {
+    height: fit-content;
+    ion-button {
+        margin: 5px 0;
+    }
+}
+
+ion-list {
+    width: 100%;
+    ion-item {
+        // --background: #fff;
+        // border-radius: 50px;
+        margin: 10px 0;
+        // --padding-start: 0;
+        ion-label {
+            color: var(--ion-color-secondary)!important;
+            margin-left: 10px!important;
+        }
+        ion-radio {
+            // --color: #032153;
+            --color: #fff;
+            --color-checked: #eb445a;
+            margin-left: 15px;
+        }
+        ion-img {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+        }
+    }
+}

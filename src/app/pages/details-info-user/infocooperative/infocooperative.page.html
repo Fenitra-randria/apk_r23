@@ -1,0 +1,169 @@
+<app-header></app-header>
+<app-header-info-user pageActive="Information de votre compte"></app-header-info-user>
+
+<ion-content>
+    <ion-grid class="container">
+        <ion-row *ngIf="typeUser==='if-cooperative'">
+            <ion-col size="12" class="bg-light-propos">
+                <div class="d-flex">
+                    <p class="m-0 font12 borderbottom1 color-secondary">
+                        Propriétaire
+                    </p>
+                    <ion-icon class="font22" color="primary" (click)="verPage('modify-profile')" name="create"></ion-icon>
+                </div>
+                <ion-row class="container py-0">
+                    <ion-col size="6">
+                        <p class="m-0 font11 text-primary line-height-15">
+                            Cooperative
+                            <br> Nom du propriétaire
+                            <br> Contact propriétaire
+                            <br> E-mail
+                            <br> Adresse
+                        </p>
+                    </ion-col>
+                    <ion-col size="6">
+                        <p class="m-0 font11 text-primary line-height-15">
+                            : Cotisse Madagascar
+                            <br> : RAKOTOSON Mamy
+                            <br> : 034 04 920 00
+                            <br> : ctva@gmail.com
+                            <br> : Box 20 Maki
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col size="12" class="bg-light-propos">
+                <div class="d-flex">
+                    <p class="m-0 font12 borderbottom1 color-secondary">
+                        Responsable : Antananarivo-Tamatave
+                    </p>
+                    <ion-icon class="font22" color="primary" (click)="verPage('add-destination')" name="create"></ion-icon>
+                </div>
+                <ion-row class="container py-0">
+                    <ion-col size="6">
+                        <p class="m-0 font11 text-primary line-height-15">
+                            Responsable
+                            <br> Tél. 1
+                            <br> Tél. 2
+                            <br> Tél. 3
+                        </p>
+                    </ion-col>
+                    <ion-col size="6">
+                        <p class="m-0 font11 text-primary line-height-15">
+                            : RATSIVAHINY Mamy
+                            <br> : 034 04 920 00
+                            <br> : 034 04 920 10
+                            <br> : 034 04 920 20
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col size="12" class="bg-light-propos">
+                <div class="d-flex">
+                    <p class="m-0 font12 borderbottom1 color-secondary">
+                        Responsable : Tamatave-Antananarivo
+                    </p>
+                    <ion-icon class="font22" color="primary" (click)="verPage('add-destination')" name="create"></ion-icon>
+                </div>
+                <ion-row class="container py-0">
+                    <ion-col size="6">
+                        <p class="m-0 font11 text-primary line-height-15">
+                            Responsable
+                            <br> Tél. 1
+                            <br> Tél. 2
+                            <br> Tél. 3
+                        </p>
+                    </ion-col>
+                    <ion-col size="6">
+                        <p class="m-0 font11 text-primary line-height-15">
+                            : RATSIVAHINY Mamy
+                            <br> : 034 04 920 00
+                            <br> : 034 04 920 10
+                            <br> : 034 04 920 20
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="typeUser!='if-cooperative'">
+            <ion-col size="12" class="bg-light-propos">
+                <div class="d-flex">
+                    <p class="m-0 font12 borderbottom1 color-secondary">
+                        Informations
+                    </p>
+                    <ion-icon class="font22" color="primary" (click)="verPage('modify-profile')" name="create"></ion-icon>
+                </div>
+                <ion-row class="container py-0">
+                    <ion-col size="6">
+                        <p class="m-0 font11 text-primary line-height-15">
+                            Civilité
+                            <br> Nom
+                            <br> Prénom
+                            <br> Contact
+                            <br> Courriel
+                            <br> Adresse
+                            <br *ngIf="typeUser==='if-chauffeur'"> {{ typeUser==='if-chauffeur'?'Permis de conduire':'' }}
+                            <br> CIN
+                        </p>
+                    </ion-col>
+                    <ion-col size="6">
+                        <p class="m-0 font11 text-primary line-height-15">
+                            : Homme
+                            <br> : RAKOTOSON
+                            <br> : Mamy
+                            <br> : 034 04 920 00
+                            <br> : ctva@gmail.com
+                            <br> : Box 20 Maki
+                            <br *ngIf="typeUser==='if-chauffeur'"> : {{ typeUser==='if-chauffeur'?'verifier':'' }}
+                            <br> : 102 031 011 506(verifier)
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col *ngIf="typeUser!='if-voyageur'" size="12">
+                <p class="font11 m-0">
+                    Tours des voitures disponibles
+                </p>
+                <ion-row class="list-reserver mb-2">
+                    <ion-col *ngFor="let itemPub of [1,2,3,4];let i =index;" size="3" class="item-reserver position-relative">
+                        <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQsoxB5I9ux0GC-GBHnYtDk_8T_DILs0SqmQ&usqp=CAU" class="img-voiture"></ion-img>
+                        <div class="absolut-img-bot">
+                            <div (click)="verPage('infocooperative')" style="display: flex;" class="position-relative img-cop">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9voS0J3876PJ8H-N04CgCAMA9i2tR20vRpA&usqp=CAU" alt="" class="user-profile">
+                                <div class="actif"></div>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col size="12" class="bg-light-propos">
+                <p class="m-0 font12 borderbottom1 color-secondary">
+                    5 Contacts
+                </p>
+                <ion-row class="slide-new-inscri">
+                    <ion-col class="item-in-col" (click)="verPage('infocooperative')" *ngFor="let itemPub of [1,2,3,4,5,6,7,8,9,10];let i =index;" size="2.4">
+                        <div class="ajout-pdp">
+                            <div class="add-img avec-border mt-2">
+                                <img src="https://www.pourquoidocteur.fr/media/article/thunbs/uploded_anarci-1623243208.jpeg" alt="">
+                            </div>
+                            <ion-label class="limite1lign font11 w-100 text-primary">Anais Félicia RAKOTOARIJAONA</ion-label>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div class="d-flex">
+                <ion-icon (click)="showMenuClick()" size="54" src="../../../../assets/icon/accueil/menu.svg"></ion-icon>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon (click)="verPage('accueil')" class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </ion-grid>
+</ion-footer>

@@ -1,0 +1,114 @@
+.prix-estimer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex-direction1 .add-img {
+    margin-top: 5px;
+}
+
+.flex-direction1 {
+    text-align: center;
+}
+
+ion-content {
+    --padding-bottom: 60px!important;
+}
+
+.minh-80 {
+    min-height: 80px;
+}
+
+.minh-0 {
+    --min-height: 0px;
+    --padding-start: 0!important;
+}
+
+.details-place.d-flex {
+    margin: 10px 0;
+    .color {
+        width: 26px;
+        height: 23px;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        font-size: 11px;
+    }
+    .color-place-libre,
+    .color-chaffeur {
+        background-color: #fff;
+    }
+    .color-chaffeur {
+        color: #898989;
+    }
+    .color-place-libre {
+        color: #FF3354;
+    }
+    .color-reserver {
+        background-color: #707070;
+        color: #fff;
+    }
+    .color-vos-place {
+        background-color: #C3D830;
+        color: #fff;
+    }
+    .color-encours-reservation {
+        background-color: #FF3354;
+        color: #fff;
+    }
+    .w-50.item-flex {
+        ion-col {
+            display: flex;
+            justify-content: center;
+            .color {
+                margin: 0!important;
+            }
+        }
+        ion-item {
+            --padding-start: 0;
+            --min-height: 30px;
+        }
+    }
+}
+
+.add-img {
+    width: 50px;
+    height: 50px;
+    background-size: 20px;
+}
+
+ion-checkbox {
+    --background: #A49999;
+    --border-color: transparent;
+    width: 12px;
+    height: 12px;
+}
+
+// 
+.list-lige .item-lig .dedails-zotra ion-list ion-list-header ion-label {
+    text-align: left;
+}
+
+.list-lige .item-lig ion-img.img-voiture {
+    height: 110px!important;
+}
+
+.list-lige .item-lig {
+    background-color: transparent!important;
+}
+
+.dedails-zotra {
+    background-color: #fff;
+    margin-right: 5px;
+    border-radius: 5px;
+    position: relative;
+    .flex-boutton-bottom {
+        bottom: 8px;
+        right: 8px;
+    }
+}
+
+//

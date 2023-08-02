@@ -1,0 +1,193 @@
+<!-- <ion-header>
+    <ion-grid class="bg-secondary header-cooperative">
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="btn_index === 0 ? back() : prev()" name="chevron-back-outline"></ion-icon>
+            </ion-grid>
+            <ion-grid class="name-cooperative px-0 d-flex justify-start">
+                <div [ngClass]="image ? 'avec-border' : ''" class="image-user-cooperative position-relative add-img m-0">
+                    <ion-img *ngIf="image" [src]="image" alt=""></ion-img>
+                    <input accept="image/*" (change)="onSelectFilePub($event)" type="file" id="logo" class="upload-img">
+                </div>
+                <div (click)="verDetailsProfile()" class="ml-2 max-100">
+                    <p class="m-0 mt-1 font12 limite1lign">
+                        {{ btn_index === 0 ? '' : 'Cotiss Madagascar' }}
+                    </p>
+                    <p *ngIf="btn_index === 0" class="m-0 mt-4 font10 line-height-15">
+                        Ajouter votre logo
+                    </p>
+                    <p *ngIf="btn_index === 1" class="m-0 mt-4 font10 line-height-15">
+                        <ion-icon size="10" color="success" name="person"></ion-icon>
+                        30 contacts
+                        <ion-icon size="10" color="success" name="heart"></ion-icon>
+                        105
+                        <br>
+                        <span class="limite1lign">
+                            <ion-icon size="10" color="success" name="location"></ion-icon>
+                            IVM 12 TER AT Ambodivona, Antananarivo 101
+                        </span>
+                    </p>
+                </div>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+    <div class="mt-10 container py-0">
+        <hr class="w-100">
+    </div>
+</ion-header> -->
+<ion-header>
+    <ion-grid class="bg-secondary header-cooperative h-105">
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="prev()" name="chevron-back-outline"></ion-icon>
+            </ion-grid>
+        </ion-grid>
+    </ion-grid>
+    <div class="mt-10 container py-0">
+        <ion-grid class="name-cooperative-voyageur px-0 d-flex direction-column justify-center">
+            <div [ngClass]="image ? 'avec-border' : ''" class="image-user-cooperative position-relative add-img m-0">
+                <ion-img *ngIf="image" [src]="image" alt=""></ion-img>
+                <input accept="image/*" (change)="onSelectFilePub($event)" type="file" id="logo" class="upload-img">
+            </div>
+            <div (click)="verPage('list-action-profile')" class="ml-2 text-center max-100">
+                <p class="m-0 mt-1 font12 limite1lign">
+                    {{ btn_index === 0 ? 'Ajouter votre logo' : 'Cotiss Madagascar' }}
+                </p>
+                <p *ngIf="btn_index === 1" class="m-0 d-flex justify-start font10 mt-1 line-height-15">
+                    <ion-icon size="10" class="mx-1 d-block" color="success" name="person"></ion-icon>
+                    30 contacts
+                    <ion-icon size="10" class="mx-1 ml-3 d-block" color="success" name="heart"></ion-icon>
+                    105
+                    <ion-icon class="mx-1 ml-3 d-block" size="10" color="success" name="location"></ion-icon>
+                    <span class="limite1lign">
+                        IVM 12 TER AT Ambodivona, Antananarivo 101
+                    </span>
+                </p>
+            </div>
+        </ion-grid>
+        <hr class="w-100">
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-slides [options]="slideOptions" (ionSlideWillChange)="doCheck()" #slideregister>
+            <ion-slide>
+                <ion-grid *ngIf="btn_index === 0" class="center-titre">
+                    <div class="login-register">
+                        <div class="form-input m-0">
+                            <ion-label class="font11">Nom de votre coopérative</ion-label>
+                            <ion-input type="text"></ion-input>
+                        </div>
+                        <div class="form-input m-0">
+                            <ion-label class="font11">Nom du gérant</ion-label>
+                            <ion-input type="text"></ion-input>
+                        </div>
+                        <div class="form-input m-0">
+                            <ion-label class="font11">Prénom</ion-label>
+                            <ion-input type="text"></ion-input>
+                        </div>
+                        <div class="form-input m-0">
+                            <ion-label class="font11">Téléphone</ion-label>
+                            <ion-input type="number"></ion-input>
+                        </div>
+                        <div class="form-input m-0">
+                            <ion-label class="font11">Adresse</ion-label>
+                            <ion-input type="text"></ion-input>
+                        </div>
+                        <div class="form-input mt-0">
+                            <ion-label class="font11">E-mail</ion-label>
+                            <ion-input type="mail"></ion-input>
+                        </div>
+                        <ion-button (click)="envoyeSms()" [disabled]="statusLoading || codeEnvoye" color="secondary" class="register">
+                            {{ statusLoading ? '':'ENREGISTRER VOTRE INSCRIPTION' }}
+                            <ion-spinner *ngIf="statusLoading" color="primary" name="bubbles"></ion-spinner>
+                        </ion-button>
+                        <div *ngIf="codeEnvoye" class="validation-bloc">
+                            <ion-text>
+                                Merci de saisir le code envoyé au 034 04 920 00
+                            </ion-text>
+                            <div class="input-validation">
+                                <ion-input #otp1 name="code1" [(ngModel)]="formCode.code1" (keyup)="otpController($event,otp2,otp1)" type="text" maxlength="1"></ion-input>
+                                <ion-input #otp2 name="code2" [(ngModel)]="formCode.code2" (keyup)="otpController($event,otp3,otp2)" type="text" maxlength="1"></ion-input>
+                                <ion-input #otp3 name="code3" [(ngModel)]="formCode.code3" (keyup)="otpController($event,otp4,otp3)" type="text" maxlength="1"></ion-input>
+                                <ion-input #otp4 name="code4" [(ngModel)]="formCode.code4" (keyup)="otpController($event,otp5,otp4)" type="text" maxlength="1"></ion-input>
+                                <ion-input #otp5 name="code5" [(ngModel)]="formCode.code5" (ionChange)="valideNum($event,otp1,otp2,otp3,otp4,otp5)" type="text" maxlength="1"></ion-input>
+                            </div>
+                            <ion-button class="transparent">
+                                ME RENVOYER LE CODE
+                            </ion-button>
+                        </div>
+                    </div>
+                </ion-grid>
+            </ion-slide>
+            <ion-slide>
+                <ion-grid *ngIf="btn_index === 1" class="center-titre">
+                    <div class="login-register">
+                        <div class="form-input m-0">
+                            <ion-label class="font11">Numéro NIF</ion-label>
+                            <ion-input type="text"></ion-input>
+                        </div>
+                        <div class="form-input m-0 d-flex">
+                            <div class="flex-direction1">
+                                <ion-label class="font11">Recto</ion-label>
+                                <div class="ajout-pdp">
+                                    <div [ngClass]="Recto ? 'avec-border' : ''" class="add-img add">
+                                        <img *ngIf="Recto" [src]="Recto" alt="">
+                                        <input accept="image/*" (change)="onSelectFilePubRecto($event)" type="file" id="Recto" class="upload-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-direction1">
+                                <ion-label class="font11">Verso</ion-label>
+                                <div class="ajout-pdp">
+                                    <div [ngClass]="Verso ? 'avec-border' : ''" class="add-img add">
+                                        <img *ngIf="Verso" [src]="Verso" alt="">
+                                        <input accept="image/*" (change)="onSelectFilePubVerso($event)" type="file" id="Verso" class="upload-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-input m-0">
+                            <ion-label class="font11">Numéro STAT</ion-label>
+                            <ion-input type="text"></ion-input>
+                        </div>
+                        <div class="form-input d-flex">
+                            <div class="flex-direction1">
+                                <ion-label class="font11">Recto</ion-label>
+                                <div class="ajout-pdp">
+                                    <div [ngClass]="Recto1 ? 'avec-border' : ''" class="add-img add">
+                                        <img *ngIf="Recto1" [src]="Recto1" alt="">
+                                        <input accept="image/*" (change)="onSelectFilePubRecto1($event)" type="file" id="Recto1" class="upload-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-direction1">
+                                <ion-label class="font11">Verso</ion-label>
+                                <div class="ajout-pdp">
+                                    <div [ngClass]="Verso1 ? 'avec-border' : ''" class="add-img add">
+                                        <img *ngIf="Verso1" [src]="Verso1" alt="">
+                                        <input accept="image/*" (change)="onSelectFilePubVerso1($event)" type="file" id="Verso1" class="upload-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ion-button (click)="register()" color="secondary" class="register">
+                            FINALISER VOTRE INSCRIPTION
+                        </ion-button>
+                    </div>
+                </ion-grid>
+            </ion-slide>
+        </ion-slides>
+    </ion-grid>
+    <div class="footer">
+        <div class="d-flex w-100 px-3 pt-3">
+            <div>
+                <ion-text>
+                    Au cours de votre voyage <br><span class="uppercase">Un plaisir garanti...</span>
+                </ion-text>
+            </div>
+            <ion-icon class="logo-footer" size="54" src="../../../../assets/icon/register/logo-blanc.svg"></ion-icon>
+        </div>
+    </div>
+</ion-content>

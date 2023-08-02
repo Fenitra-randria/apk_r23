@@ -1,0 +1,126 @@
+ion-text.text-right.mb-15.font10.d-block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    height: fit-content;
+}
+
+.add-img {
+    margin-top: -55px;
+}
+
+.flex-direction1 .add-img {
+    margin-top: 5px;
+}
+
+.flex-direction1 {
+    text-align: center;
+}
+
+.menu-profile {
+    width: 100%;
+    flex-wrap: wrap;
+    ion-icon {
+        margin-right: 6px;
+    }
+}
+
+ion-icon.menus-troispoi {
+    font-size: 25px !important;
+}
+
+.absolute-menu {
+    position: absolute;
+    right: 8px;
+    font-size: 18px;
+}
+
+.font12 {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.bg-light-propos {
+    background: #ffffffeb;
+    opacity: 0.75;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 3px 0;
+}
+
+.borderbottom1.color-secondary {
+    border-color: #ff3354;
+}
+
+.item-menu {
+    width: calc(50% - 3px);
+    .header-slote {
+        display: flex;
+        height: 38px;
+        padding: 0 10px;
+        background-color: #ff3354;
+        font-size: 10px !important;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        ion-icon {
+            font-size: 16px;
+        }
+    }
+    ion-item {
+        --min-height: 10px;
+        --padding-start: 0;
+        ion-radio {
+            margin: 0;
+            background-color: #fff;
+            position: absolute;
+            right: 0;
+            --color: #fff!important;
+            width: 15px;
+            height: 15PX;
+            border-radius: 50%;
+            --color-checked: #ff3354;
+        }
+    }
+}
+
+.menu-profile.d-flex {
+    align-items: flex-start!important;
+}
+
+ion-label.d-flex {
+    display: flex!important;
+}
+
+// css slide
+ion-slides.slide-etaps,
+ion-slide.slide-etaps-item {
+    width: 100%!important;
+}
+
+ion-slides.slide-new-inscri {
+    width: 100%;
+    ion-slide {
+        width: 20%!important;
+        .add-img {
+            width: 50px;
+            height: 50px;
+        }
+        .ajout-pdp {
+            width: 100%;
+            padding: 0 10px;
+            ion-label {
+                max-width: 100%;
+                font-size: 12px!important;
+            }
+        }
+    }
+}
+
+ion-slide {
+    display: block!important;
+}

@@ -1,0 +1,117 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid class="container">
+            <ion-grid class="headerGGlobales d-flex p-0">
+                <ion-icon (click)="prev()" name="chevron-back-outline"></ion-icon>
+            </ion-grid>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="container direction-column">
+        <ion-grid class="center-titre">
+            <ion-icon src="../../assets/icon/home/voiture.svg"></ion-icon>
+            <ion-text>
+                Choisissez le statut avec lequel vous souhaitez poursuivre votre inscription :
+            </ion-text>
+            <ion-list>
+                <!-- <ion-radio-group [(ngModel)]="user_type">
+                    <ion-item lines="none">
+                        <ion-radio value="if-cooperative"></ion-radio>
+                        <ion-label>Coopérative</ion-label>
+                        <ion-img src="../../../assets/icon/register/bg-voiture.svg"></ion-img>
+                    </ion-item>
+
+                    <ion-item lines="none">
+                        <ion-radio value="if-voyageur"></ion-radio>
+                        <ion-label>Voyageur</ion-label>
+                        <ion-img src="../../../assets/icon/register/bg-voiture1.svg"></ion-img>
+                    </ion-item>
+
+                    <ion-item lines="none">
+                        <ion-radio value="if-proprietaire-vehicule"></ion-radio>
+                        <ion-label>Propriétaire de véhicule</ion-label>
+                        <ion-img src="../../../assets/icon/register/bg-voiture2.svg"></ion-img>
+                    </ion-item>
+
+                    <ion-item lines="none">
+                        <ion-radio value="if-chauffeur"></ion-radio>
+                        <ion-label>Chauffeurs</ion-label>
+                        <ion-img src="../../../assets/icon/register/bg-voiture1.svg"></ion-img>
+                    </ion-item>
+                    <ion-item lines="none">
+                        <ion-radio value="if-loueur-voiture"></ion-radio>
+                        <ion-label>Loueur de voiture</ion-label>
+                        <ion-img src="../../../assets/icon/register/bg-voiture2.svg"></ion-img>
+                    </ion-item>
+                </ion-radio-group> -->
+                <ion-radio-group [(ngModel)]="user_type">
+                    <ion-item lines="none">
+                        <div>
+                            <div class="d-flex justify-start">
+                                <ion-radio class="ml-0" value="if-cooperative"></ion-radio>
+                                <ion-label class="d-block">Coopérative</ion-label>
+                            </div>
+                            <ion-text class="text-left font11 w-100 d-block">
+                                Vous êtes une agence ou Coopérative, vous possédez un véhicule au mois ?
+                            </ion-text>
+                        </div>
+                    </ion-item>
+
+                    <ion-item lines="none">
+                        <div>
+                            <div class="d-flex justify-start">
+                                <ion-radio class="ml-0" value="if-voyageur"></ion-radio>
+                                <ion-label class="d-block">Voyageur</ion-label>
+                            </div>
+                            <ion-text class="text-left font11 w-100 d-block">
+                                Vous êtes voyageur et vous voulez faire une réservation dans nos applications ?
+                            </ion-text>
+                        </div>
+                    </ion-item>
+
+                    <ion-item lines="none">
+                        <div>
+                            <div class="d-flex justify-start">
+                                <ion-radio class="ml-0" value="if-proprietaire-vehicule"></ion-radio>
+                                <ion-label class="d-block">Propriétaire de véhicule</ion-label>
+                            </div>
+                            <ion-text class="text-left font11 w-100 d-block">
+                                Vous êtes propriétaire de véhicule et vous voulez faire une suivie de votre voiture ?
+                            </ion-text>
+                        </div>
+                    </ion-item>
+
+                    <ion-item lines="none">
+                        <div>
+                            <div class="d-flex justify-start">
+                                <ion-radio class="ml-0" value="if-chauffeur"></ion-radio>
+                                <ion-label class="d-block">Chauffeurs</ion-label>
+                            </div>
+                            <ion-text class="text-left font11 w-100 d-block">
+                                Inscrivez-vous autant que chauffeur.
+                            </ion-text>
+                        </div>
+                    </ion-item>
+                    <ion-item lines="none">
+                        <div>
+                            <div class="d-flex justify-start">
+                                <ion-radio class="ml-0" value="if-loueur-voiture"></ion-radio>
+                                <ion-label class="d-block">Loueur de voiture</ion-label>
+                            </div>
+                            <ion-text class="text-left font11 w-100 d-block">
+                                Vous êtes Loueur de voiture ? vous possédez un véhicule au mois.
+                            </ion-text>
+                        </div>
+                    </ion-item>
+                </ion-radio-group>
+            </ion-list>
+            <div class="login-register">
+                <ion-button (click)="valideChoix()" color="secondary" class="register">
+                    VALIDER VOTRE CHOIX
+                </ion-button>
+            </div>
+        </ion-grid>
+    </ion-grid>
+</ion-content>
